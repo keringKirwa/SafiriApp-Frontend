@@ -1,0 +1,51 @@
+.mainPaper{
+    font-family: 'Tangerine', cursive;
+    font-size: x-large;
+    display: flex;
+    flex: row;
+    justify-content: space-around;
+    width: '100%';
+    margin: 10px;
+    height: 200px;
+    padding: 10px;
+
+}
+
+.mainPaper:hover{
+    transform: scale3d(1.0006);
+    transition: transform 500ms;
+    margin: 10px;
+    background-color: beige;
+
+
+}
+h2{
+    text-align:center;
+    margin: 3px;
+}
+.sub{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 10px;
+    
+}
+
+span{
+    color: goldenrod;
+}
+#strong{
+    font-size: 40px;
+}
+.intro{
+    width: 300px;
+}
+h4{
+    text-align: center;
+}
+
+.copyright{
+    position: relative;
+    left: 200px;
+}

@@ -1,0 +1,36 @@
+#header{
+    font-family: 'Tangerine', cursive;
+        font-family: 'Uchen', serif;
+        font-size: 40px;
+        margin-left: 20px;
+       
+}
+#header1 {
+    font-family: 'Tangerine', cursive;
+        font-family: 'Uchen', serif;
+        font-size: 30px;
+        position: relative;
+        bottom: -25px;
+}
+#emailTypo{
+    position: relative;
+    top: 50px;
+
+}
+#signInTypo{
+    position:absolute;
+    top:0;
+    left: 20%;
+}
+
+#user{
+    position: absolute;
+    top:0px;
+}
+
+#logout{
+    position: relative;
+    top: 15px;
+    border-radius: 0px 0px 0px 20px;
+    text-emphasis-color: black;
+}

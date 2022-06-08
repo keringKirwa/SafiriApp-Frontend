@@ -1,0 +1,23 @@
+ .paper {
+         
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 100px;
+        width: 500px;
+        position: relative;
+        left: 400px;
+        height: '100%';
+        gap: 3px;
+
+ }
+
+ #avatar{
+         background-color: rgb(206, 23, 23);
+ }
+ #signUpButton{
+         margin: 10px;
+         position: relative;
+         left: -12px;
+ }
