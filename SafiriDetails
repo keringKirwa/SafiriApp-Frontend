@@ -3,13 +3,9 @@
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhbW15QGdtYWlsLmNvbSIsImlkIjoiNjI5ZjY1ZjhhYjk2ZDcyMjlmZmE3MGEzIiwiaWF0IjoxNjU0NjEzNDk2LCJleHAiOjE2NTQ2MTcwOTZ9.mAcK1ILdp43nAQ8ACNFAIcDW8ooQ1K8KfQjFuNk1HNU
 
 
- useEffect(() => {
+useEffect(() => {
     
-    const loggedInUser = useSelector(state => state.user.userName);
-    console.log(loggedInUser);
-    setUser(loggedInUser);
-  })
- 
-
-SSHKIRWAkeys
-githubkey
+  const loggedInUser = useSelector(state => state.user.userName);
+  console.log(loggedInUser);
+  setUser(loggedInUser);
+});

@@ -13,7 +13,7 @@ export const Navbar = () => {
   
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const locatioo = useLocation();
+  const location = useLocation();
 
   const styles = useStyles();
 
@@ -22,7 +22,7 @@ export const Navbar = () => {
    useEffect(() => {
      setUser(JSON.parse(localStorage.getItem('profile'))?.name);
     
-  },);
+  },[location]);
 
 
   const handleLogout = async () => {

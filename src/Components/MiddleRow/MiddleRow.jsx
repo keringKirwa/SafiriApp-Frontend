@@ -2,11 +2,16 @@ import React, { useState,useEffect } from 'react'
 import './styles.css';
 import { Typography, Button } from '@material-ui/core';
 import Footer from '../Footer/Footer';
-import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { Link, useLocation } from 'react-router-dom';
 
 export const MiddleRow = () => {
-  const [user, setUser] = useState('');
+  const location = useLocation();
+   const [user, setUser] = useState((JSON.parse(localStorage.getItem('profile'))?.name));
+
+   useEffect(() => {
+     setUser(JSON.parse(localStorage.getItem('profile'))?.name);
+    
+},[location]);
 
   return (
 
