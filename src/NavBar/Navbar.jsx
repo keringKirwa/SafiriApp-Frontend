@@ -42,7 +42,7 @@ export const Navbar = () => {
   
 
     return (
-      <AppBar color="inherit" style={{ marginBottom: "10px" }} className={styles.appBar}>
+      <AppBar  style={{ marginBottom: "10px" }} className={styles.appBar}>
 
         <h2 className='fontFamily' id='header1' width='50%'>
             <span style={{ color: "rgb(25,25,112)" }} id='header'> Safiri : </span >
@@ -86,7 +86,7 @@ const useStyles = makeStyles({
     flexDirection: "row",
     justifyContent: 'space-between',
     height: '100px',
-    background: 'gold',
+    background: 'skyblue',
     padding: '5px',
     flexWrap:'wrap'
 

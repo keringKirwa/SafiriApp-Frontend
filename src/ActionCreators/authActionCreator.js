@@ -32,11 +32,12 @@ export const signIn = async (formData, navigate, dispatch) => {
 
     dispatch(login({ data:{email:userEmail, name:userName, token:token}}));
 
-    navigate('/');
+    navigate('/products');
   } catch (error) {
     console.log(error);
   }
 };
+
 
 export const signUp = async (formData, navigate, dispatch) => {
   try {

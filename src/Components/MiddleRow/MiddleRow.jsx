@@ -6,8 +6,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 export const MiddleRow = () => {
   const location = useLocation();
-   const [user, setUser] = useState((JSON.parse(localStorage.getItem('profile'))?.name));
-
+  const [user, setUser] = useState((JSON.parse(localStorage.getItem('profile'))?.name));
    useEffect(() => {
      setUser(JSON.parse(localStorage.getItem('profile'))?.name);
     

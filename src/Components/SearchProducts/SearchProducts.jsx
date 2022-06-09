@@ -11,11 +11,14 @@ const initialState = { from: '', destination: '', date: '', };
 export const SearchProducts = () => {
 
   const [userDetails, setUserDetails] = useState(initialState);
+  
   const handleChange = (e) => setUserDetails({ ...userDetails, [e.target.name]: e.target.value });
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(userDetails);
+
+    /* TODO : call an action creator from heren to communicate wit the database and send us back the response . */
   };
 
 
