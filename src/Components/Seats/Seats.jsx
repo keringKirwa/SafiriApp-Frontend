@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Grid, Button, Paper } from '@material-ui/core';
 import Leftbar from '../LeftBar/LeftBar';
 import './styles.css'
-import image from '../../../src/images/bus.jpg'
+import { useDispatch, useSelector } from 'react-redux';
+import { addedSeat, removedSeat } from '../../reducers/selectedSeatsSlice';
 import Footer from '../Footer/Footer';
 export const Seats = () => {
+
+  const dispatch = useDispatch();
 
   /* anytime the seats componnet loads , then we send an axioxs request to the backend , the respponse will be used to desplay the order and the seats page . */
 
@@ -23,8 +26,36 @@ export const Seats = () => {
     { seatNumber: 12, taken: 0 }
   ]
 
+  const seatsArray = useSelector((state) => state.selectedSeats.seatsSelected);
+    
+  const [cart, setSeatsSelected] = useState([1,2,3]);
+  const price = 1200;
+   
+  const numberOfSeats = seatsArray.length ||  0;
+  const totalAmount = price * numberOfSeats || 0;
 
-  return (
+
+  const handleSelect = (event) => {
+    
+    
+    const checked = event.target.checked;
+    const value = event.target.value;
+
+    /* note that it is always advisable that we dispatch an object to the store , that object will be called the payload. that is action.payload.data.seatNo will give us the seat ID */
+
+    console.log(checked);
+    console.log(value);
+
+    if (checked) {
+
+      dispatch(addedSeat({data:{seatNo:value}}));
+      
+    }
+    else {
+      dispatch(removedSeat({ data: { seatNo: value } }));
+    }
+  }
+    return (
     <Grid container >
 
         <Grid item xs={2} sm={ 2}>
@@ -41,9 +72,16 @@ export const Seats = () => {
           
             {carSeats.map((seatObject) => (
               <div className="seatBox">
-                <label htmlFor="c">{ seatObject.seatNumber==1?'Driver':seatObject.seatNumber}</label>
-                <input type="checkbox" id='c' value={seatObject.seatNumber} className='checkBox'
-                disabled={seatObject.seatNumber == 1 || seatObject.seatNumber== 5 || seatObject.taken == 1  ? true : false} />
+                <label htmlFor="c">{seatObject.seatNumber == 1 ? 'Driver' : seatObject.seatNumber}</label>
+                
+                <input
+                  type="checkbox"
+                  id='c'
+                  value={seatObject.seatNumber}
+                  className='checkBox'
+                  disabled={seatObject.seatNumber == 1 || seatObject.seatNumber == 5 || seatObject.taken == 1 ? true : false}
+                  onChange={handleSelect}
+                />
               
               </div>))}
           </div>
@@ -63,8 +101,15 @@ export const Seats = () => {
                   <div className="actualTicket">
                       <h3>From : Nairobi</h3>
                       <h3>To : Eldoret</h3>
-                      <h3>selected Seats  : { "  "}9,10,11</h3>
-                      <h3 id='h3price'>Price :{" "} 1*3 = {" "} { " "} <h2>Ksh. 5200</h2></h3>
+              <h3 className='seatsMapped'>selected Seats  : {"  "}
+                {seatsArray.map((seat) => (
+                  <h2>{ seat},</h2>
+                
+              ))}
+              </h3>
+              
+              <h3 id='h3price'>Price :{" "} {numberOfSeats} * {price}  = <h2>
+                 Ksh. {" "} {" "}{totalAmount}</h2></h3>
                       
                   </div>
                   <Button size='large' variant='contained' color='primary' className='button' > Proceed To Check Out</Button>

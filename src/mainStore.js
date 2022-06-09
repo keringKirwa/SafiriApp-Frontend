@@ -2,11 +2,15 @@ import { configureStore } from '@reduxjs/toolkit';
 
 import userReducer from './reducers/authSlice.js';
 import carReducer from './reducers/carSlice';
+import cartSlice from './reducers/selectedSeatsSlice';
+
+
 
 export const store = configureStore({
   reducer: {
     user: userReducer,
-    cars:carReducer,
+    cars: carReducer,
+   selectedSeats:cartSlice,
   },
 });
 

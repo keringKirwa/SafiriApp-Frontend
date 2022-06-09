@@ -7,13 +7,14 @@
 }
 #cart{
     width: 420px;
-    height: 450px;
+    height: 475px;
     padding-top: 100px;
     margin: 20px;
     border-radius: 20px;
     border: 3px violet;
     background-color:beige;
     position: fixed;
+    gap: 10px;
 
 }
 #proceedText{
@@ -21,6 +22,7 @@
     font-family: 'Uchen', serif;
     font-weight: 60px;
     font-size: 20px;
+    margin-bottom: 5px;
 
 }
 
@@ -99,4 +101,11 @@ input.checkBox{
     top: 120px;
     left: 95px;
 
+}
+.seatsMapped{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
 }

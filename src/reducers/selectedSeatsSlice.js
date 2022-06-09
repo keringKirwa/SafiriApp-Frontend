@@ -1,0 +1,24 @@
+import { createSlice } from '@reduxjs/toolkit';
+
+export const selectedSeatsSlice = createSlice({
+  name: 'selectedSeats',
+  initialState: {seatsSelected: [] },
+
+  reducers: {
+
+    addedSeat: (state,action) => {
+
+      state.seatsSelected = [...state.seatsSelected,action.payload.data.seatNo];
+    },
+    removedSeat: (state,action) => {
+
+        state.seatsSelected = state.seatsSelected.filter(seat => seat !== action.payload.data.seatNo);
+    },
+   
+  },
+});
+
+
+export const { addedSeat, removedSeat } = selectedSeatsSlice.actions;
+
+export default selectedSeatsSlice.reducer;
