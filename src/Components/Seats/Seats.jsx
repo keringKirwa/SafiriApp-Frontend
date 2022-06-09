@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Grid, Button, Paper } from '@material-ui/core';
 import Leftbar from '../LeftBar/LeftBar';
 import './styles.css'
@@ -27,8 +27,6 @@ export const Seats = () => {
   ]
 
   const seatsArray = useSelector((state) => state.selectedSeats.seatsSelected);
-    
-  const [cart, setSeatsSelected] = useState([1,2,3]);
   const price = 1200;
    
   const numberOfSeats = seatsArray.length ||  0;
@@ -42,9 +40,6 @@ export const Seats = () => {
     const value = event.target.value;
 
     /* note that it is always advisable that we dispatch an object to the store , that object will be called the payload. that is action.payload.data.seatNo will give us the seat ID */
-
-    console.log(checked);
-    console.log(value);
 
     if (checked) {
 
@@ -72,14 +67,14 @@ export const Seats = () => {
           
             {carSeats.map((seatObject) => (
               <div className="seatBox">
-                <label htmlFor="c">{seatObject.seatNumber == 1 ? 'Driver' : seatObject.seatNumber}</label>
+                <label htmlFor="c">{seatObject.seatNumber === 1 ? 'Driver' : seatObject.seatNumber}</label>
                 
                 <input
                   type="checkbox"
                   id='c'
                   value={seatObject.seatNumber}
                   className='checkBox'
-                  disabled={seatObject.seatNumber == 1 || seatObject.seatNumber == 5 || seatObject.taken == 1 ? true : false}
+                  disabled={seatObject.seatNumber === 1 || seatObject.seatNumber === 5 || seatObject.taken === 1 ? true : false}
                   onChange={handleSelect}
                 />
               

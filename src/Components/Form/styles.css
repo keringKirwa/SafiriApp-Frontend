@@ -2,9 +2,18 @@
 
     border-left: 1px solid violet;
 }
-#superwingImage{
+
+#SafariImage{
     object-fit: contain;
+    height: 400px;
+    width:400px;
 
     
 }
+#safiriText{
+    position: relative;
+    right: -50px;
+    bottom: -40px;
+}
+
 /* beige , the best of all colors 😃 */

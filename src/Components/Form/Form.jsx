@@ -1,6 +1,6 @@
 import React from 'react';
 import {  Typography, Paper } from '@material-ui/core';
-import SuperwingLogo from '../../images/Superwing1.JPG';
+import SafariImage from '../../images/carLogo.jpg';
 import { Divider } from '@material-ui/core';
 import useStyles from './styles.js'
 import './styles.css';
@@ -10,8 +10,9 @@ export const Form = () => {
 
   return (<Paper className={classes.NotLoggedinPaper} id='notLoggedInPaper' >
 
-      <Typography variant="h6" align="center">
-        <img src={SuperwingLogo} alt="SuperWing Ltd." height="100px" width="150px" gutterBottom id='superwingImage' />
+    <Typography variant="h6" align="center">
+      <h2 id='safiriText'>Safiri Point Travel</h2>
+        <img src={SafariImage} alt="SuperWing Ltd." gutterBottom id='SafariImage' />
         <Divider></Divider>
         <br />
         PLease sign in to:<br></br>
