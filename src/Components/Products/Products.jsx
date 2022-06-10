@@ -27,6 +27,42 @@ export const Products = () => {
   console.log(posts);
   console.log(isLoading);
 
+  const cars = [
+    {
+      from: 'Nairobi',
+      to: 'Eldoret',
+      date: '5-7-2022',
+      time: '7:00 AM',
+      price: '1200',
+      availableSeats: 3,
+      carId:'KCV123P'
+    },{
+      from: 'Thika',
+      to: 'Nyeri',
+      date: '18-6-2022',
+      time: '10:30 AM',
+      price: '400',
+      availableSeats: 7,
+      carId:'KCM34RT'
+    },{
+      from: 'KItale',
+      to: 'Kisumu',
+      date: '10-6-2022',
+      time: '9:00 AM',
+      price: '1350',
+      availableSeats: 1,
+      carId:'KDV45PT'
+    },{
+      from: 'Nairobi',
+      to: 'Nakuru',
+      date: '10-6-2022',
+      time: '8:00 AM',
+      price: '600',
+      availableSeats: 3,
+      carId:'KMNH34P'
+    },
+  ];
+
    
 
     /* TODO : isLoading ? <CircularProgress />
@@ -40,13 +76,13 @@ export const Products = () => {
                     <Leftbar/>
                 </Grid>
 
-                <Grid item sm={6}>
+          <Grid item sm={6}>
+            
 
-                    <div className="availableProducts">
-                        <Product></Product>
-                        <Product></Product>
-                        <Product></Product>
-                    </div>
+            <div className="availableProducts">
+
+              {cars.map((car) => (<Product car={car}/>))}
+            </div>
                    
                </Grid>
           

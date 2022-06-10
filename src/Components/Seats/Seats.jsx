@@ -6,10 +6,20 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addedSeat, removedSeat } from '../../reducers/selectedSeatsSlice';
 import Footer from '../Footer/Footer';
 import { PaymentModal } from '../PaymentModal/PaymentModal';
+import { useLocation } from 'react-router-dom';
+
+
 export const Seats = () => {
 
   const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
+
+  const search = useLocation().search;
+
+  const carId = new URLSearchParams(search).get('carId');
+  const price = new URLSearchParams(search).get('price');
+  console.log(carId);
+
 
   /* TODO: anytime the seats componnet loads , then we send an axioxs request to the backend , the respponse will be used to desplay the order and the seats page . */
 
@@ -29,7 +39,6 @@ export const Seats = () => {
   ]
 
   const seatsArray = useSelector((state) => state.selectedSeats.seatsSelected);
-  const price = 1200;
   const numberOfSeats = seatsArray.length ||  0;
   const totalAmount = price * numberOfSeats || 0;
 
@@ -60,7 +69,13 @@ export const Seats = () => {
   }
 
   const handleClick = () => {
-    setOpen((prevIsOpen) => !prevIsOpen);
+    if (totalAmount !== 0) {
+       setOpen((prevIsOpen) => !prevIsOpen);
+      
+    } else {
+      return;
+    }
+   
   }
 
     return (

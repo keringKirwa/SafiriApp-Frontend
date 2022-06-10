@@ -11,7 +11,7 @@ export const PaymentModal = ({stateVariable}=this.props.first) => {
 
       <img src={safiriImage} alt="" className='image' />
 
-      <h2 className='safiri'>Pay SafiriPointTravel.Ltd Ksh. <h1>{stateVariable.price}</h1>
+      <h2 className='safiri'>Pay SafiriPointTravel.Ltd  <strong>Ksh. </strong> <h1>{stateVariable.price}</h1>
       </h2>
       <Button variant='contained' color='primary' className='safiriButton'> Pay Now ✅</Button>
       

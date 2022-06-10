@@ -26,7 +26,7 @@ export const carSlice = createSlice({
 
     },
     oneCarFetched: (state,action) => {
-      state.post = action.payload;
+      state.post = action.payload.data;
       
        /* in this case , a payload is a single object.with Immer, here we are creating a new property called post. eg
        action={payload:{ name:'MaiLIMA', seats:'13',availableSeats:20  }} */
@@ -36,6 +36,6 @@ export const carSlice = createSlice({
 });
 
 
-export const { oneCarFetched,allCarsFetched,startLoading,endLoading } = carSlice.actions;
+export const { oneCarFetched,allCarsFetched,startLoading,endLoading ,carsFetchedBySearch} = carSlice.actions;
 
 export default carSlice.reducer;

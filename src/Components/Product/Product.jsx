@@ -1,9 +1,17 @@
 import "./styles.css";
 import image from '../../../src/images/carLogo.jpg'
-import { Button } from '@material-ui/core';
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
-export const Product = () => {
+export const Product = ({ car }) => {
+  /* {
+      from: 'KItale',
+      to: 'Kisumu',
+      date: '10-6-2022',
+      time: '9:00 AM',
+      price: '1350',
+      availableSeats:1,
+    } */
+  
   return (
     <div className="searchItem">
       <img
@@ -14,16 +22,16 @@ export const Product = () => {
 
       {/* ---------------------------------------------------------------- */}
       <div className="siDesc">
-        <h1 className="siTitle">Nairobi ➡️ Eldoret</h1>
+        <h1 className="siTitle">{car.from}➡️ {car.to}</h1>
 
-        <span className="siTaxiOp">4 seats available</span>
+        <span className="siTaxiOp">{car.availableSeats} seats available</span>
 			  <span className="siSubtitle">
          with  Music system and Free WIFI
         </span>
       
         <span className="siCancelOp">Free cancellation, for Less than 24 hours towards depature time.</span>
         
-        <span id="depature">Depature Time: 9:35 A.M</span>
+        <span id="depature">Depature Time: {car.time}</span>
       </div>
 
       {/* --------------------------------------------------- */}
@@ -36,9 +44,9 @@ export const Product = () => {
 
         {/* ------------------------------------------------ */}
         <div className="siDetailTexts">
-          <span className="siPrice">Ksh. 1400</span>
+          <span className="siPrice">Ksh. { car.price}</span>
 
-          <Link to='/products/:productId'><button className="siCheckButton" >See availability</button></Link>
+          <Link to={`/products/${car.carId}?carId=${car.carId}&price=${car.price}`} ><button className="siCheckButton" >See availability</button></Link>
           
         </div>
       </div>

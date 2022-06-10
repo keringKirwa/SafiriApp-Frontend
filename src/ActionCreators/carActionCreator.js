@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { allCarsFetched, endLoading, oneCarFetched, startLoading } from '../reducers/carSlice';
+import { allCarsFetched, carsFetchedBySearch, endLoading, oneCarFetched, startLoading } from '../reducers/carSlice';
 
 
 const AxiosInstance = axios.create({ baseURL: 'http://localhost:5000' });
@@ -67,7 +67,7 @@ export const getCarsBySearch = async (searchQuery,dispatch) => {
       /* data again is a List of objects. */
       
       
-    dispatch(allCarsFetched({data: data }));
+    dispatch(carsFetchedBySearch({data: data }));
     dispatch(endLoading);
         
   } catch (error) {
