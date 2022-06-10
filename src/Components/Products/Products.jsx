@@ -9,16 +9,23 @@ import { Product } from '../Product/Product';
 import Leftbar from '../LeftBar/LeftBar';
 import './styles.css'
 import { SearchProducts } from '../SearchProducts/SearchProducts';
+import { getAllCars } from '../../ActionCreators/carActionCreator';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 
-export const Products = ({ setCurrentId }) => {
+export const Products = () => {
+  const dispatch = useDispatch();
   
-/*   useEffect(() => {
-    dispatch(getPosts(page));
-  }, []);
+  useEffect(() => {
+    getAllCars(dispatch);
+    
+  }, [dispatch]);
 
-  const { posts, isLoading } = useSelector((state) => state.posts)
- */
+  const { isLoading, posts } = useSelector((state) => state.cars);
+  console.log(posts);
+  console.log(isLoading);
 
    
 

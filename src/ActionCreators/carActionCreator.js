@@ -15,7 +15,7 @@ AxiosInstance.interceptors.request.use((req) => {
 
 
 
-export const getOneCar = async (id) => {
+export const getOneCar = async (id,dispatch) => {
 
   /* data here is a single object from the database,and not a variable holding that data*/
   
@@ -23,7 +23,8 @@ export const getOneCar = async (id) => {
     
     dispatch(startLoading());
 
-    const { data } = await AxiosInstance.get(`/products/${id}`);/* this data in this line actually refers to the actual object that is coming from the backend and NOT a variable , its the actual,actual data ie an object or an array/list  . */
+    const { data } = await AxiosInstance.get(`/products/${id}`);
+    /* this data in this line actually refers to the actual object that is coming from the backend and NOT a variable , its the actual,actual data ie an object or an array/list  . */
 
     dispatch(oneCarFetched({ data:data })); /* ie{ data :[10,20,30,40...]} */
       
@@ -35,16 +36,17 @@ export const getOneCar = async (id) => {
 };
 
 
-export const getAllCars = async () => {
+export const getAllCars = async (dispatch) => {
 
-    /* data here  is an array of posts,actual data and not the variable ? */
+    /* data here  is an array of posts,actual data and not the variable ?  limit (4)*/
 
     try {
       
-    dispatch(startLoading());
-    const { data } = await AxiosInstance.get(`/products`);
+      dispatch(startLoading());
+      
+    const { data } = await AxiosInstance.get(`/posts?page=1`);/* to get the data in the reducers we will use the following : action.payload.data.data =[{},{},{},...] */
         
-    dispatch(allCarsFetched({data:data}));  
+    dispatch(allCarsFetched({data : data}));  
     dispatch(endLoading());
   } catch (error) {
     console.log(error);
@@ -52,16 +54,19 @@ export const getAllCars = async () => {
 };
 
 
-export const getCarsBySearch = (searchQuery) => {
+export const getCarsBySearch = async (searchQuery,dispatch) => {
     
     /* data here will be an array of  posts.searchQuery being an object from the UI containing : {from:'Eldoret', to:'Nairobi', date:'18/6/2020' } */
 
     try {
       
-    dispatch(startLoading());
+      dispatch(startLoading());
       
-    const { data} = await  API.get('/products/searchcars',searchQuery);
+      const { data } = await AxiosInstance.get('/products/searchcars', searchQuery);
 
+      /* data again is a List of objects. */
+      
+      
     dispatch(allCarsFetched({data: data }));
     dispatch(endLoading);
         

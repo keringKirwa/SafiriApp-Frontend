@@ -4,11 +4,14 @@ import { Grid, Button } from '@material-ui/core';
 
 
 import './stylesSearch.css'
+import { getCarsBySearch } from '../../ActionCreators/carActionCreator';
+import { useDispatch } from 'react-redux';
 
 
 const initialState = { from: '', destination: '', date: '', };
 
 export const SearchProducts = () => {
+  const dispatch = useDispatch();
 
   const [userDetails, setUserDetails] = useState(initialState);
   
@@ -16,7 +19,10 @@ export const SearchProducts = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     console.log(userDetails);
+    getCarsBySearch(userDetails,dispatch);
+
 
     /* TODO : call an action creator from heren to communicate wit the database and send us back the response . */
   };
