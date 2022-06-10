@@ -13,15 +13,12 @@ import { SearchProducts } from '../SearchProducts/SearchProducts';
 
 export const Products = ({ setCurrentId }) => {
   
+/*   useEffect(() => {
+    dispatch(getPosts(page));
+  }, []);
 
-  /* useEffect(() => {
-    
-    dispatch(getPosts(page));  
-
-    
-  }, [page]); */
-  
-
+  const { posts, isLoading } = useSelector((state) => state.posts)
+ */
 
    
 

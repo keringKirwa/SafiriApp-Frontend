@@ -1,6 +1,6 @@
 .mainPaper{
     font-family: 'Tangerine', cursive;
-    font-size: x-large;
+    font-size:large;
     display: flex;
     flex: row;
     justify-content: space-around;

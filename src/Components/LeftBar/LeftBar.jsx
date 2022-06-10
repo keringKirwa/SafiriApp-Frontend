@@ -12,8 +12,6 @@ import {
   ExitToApp,
   Home,
   Person,
-  PhotoCamera,
-  PlayCircleOutline,
   Settings,
   Storefront,
   TabletMac,
@@ -23,7 +21,7 @@ import {
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    height: "auto",
+    height: "600px",
     width: "15%",
     alignItems:"center",
     color: "black",
@@ -77,15 +75,7 @@ const Leftbar = () => {
       <div className={classes.item}>
         <List className={classes.icon} />
         <Typography className={classes.text}>Categories</Typography>
-      </div>
-      <div className={classes.item}>
-        <PhotoCamera className={classes.icon} />
-        <Typography className={classes.text}>Camera</Typography>
-      </div>
-      <div className={classes.item}>
-        <PlayCircleOutline className={classes.icon} />
-        <Typography className={classes.text}>Videos</Typography>
-      </div>
+      </div>      
       <div className={classes.item}>
         <TabletMac className={classes.icon} />
         <Typography className={classes.text}>Apps</Typography>

@@ -1,15 +1,17 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { Grid, Button, Paper } from '@material-ui/core';
 import Leftbar from '../LeftBar/LeftBar';
 import './styles.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { addedSeat, removedSeat } from '../../reducers/selectedSeatsSlice';
 import Footer from '../Footer/Footer';
+import { PaymentModal } from '../PaymentModal/PaymentModal';
 export const Seats = () => {
 
   const dispatch = useDispatch();
+  const [open, setOpen] = useState(false);
 
-  /* anytime the seats componnet loads , then we send an axioxs request to the backend , the respponse will be used to desplay the order and the seats page . */
+  /* TODO: anytime the seats componnet loads , then we send an axioxs request to the backend , the respponse will be used to desplay the order and the seats page . */
 
   const carSeats = [
     { seatNumber: 1, taken: 0 },
@@ -28,10 +30,16 @@ export const Seats = () => {
 
   const seatsArray = useSelector((state) => state.selectedSeats.seatsSelected);
   const price = 1200;
-   
   const numberOfSeats = seatsArray.length ||  0;
   const totalAmount = price * numberOfSeats || 0;
 
+
+  const stateVariable = {
+    price: totalAmount,
+    seats: seatsArray,
+  }
+   
+  
 
   const handleSelect = (event) => {
     
@@ -50,15 +58,24 @@ export const Seats = () => {
       dispatch(removedSeat({ data: { seatNo: value } }));
     }
   }
-    return (
-    <Grid container >
 
-        <Grid item xs={2} sm={ 2}>
+  const handleClick = () => {
+    setOpen((prevIsOpen) => !prevIsOpen);
+  }
+
+    return (
+      <Grid container >
+        
+        {open && <PaymentModal stateVariable={ stateVariable}/>}
+        
+        
+        <Grid item xs={2} sm={2}>
           <Leftbar></Leftbar>
         </Grid>
 
         <Grid item xs={6} sm={ 6}>
-        <div id='mainContainer'>
+          <div id='mainContainer'>
+            
           <h1 id='almost'>Almost To the end , Select The Seats Remaining Below.Then proceed to check-Out</h1>
 
           < div className='middleRow'> 
@@ -97,9 +114,9 @@ export const Seats = () => {
                       <h3>From : Nairobi</h3>
                       <h3>To : Eldoret</h3>
               <h3 className='seatsMapped'>selected Seats  : {"  "}
-                {seatsArray.map((seat) => (
+               
+                 {seatsArray.map((seat) => (
                   <h2>{ seat},</h2>
-                
               ))}
               </h3>
               
@@ -107,7 +124,13 @@ export const Seats = () => {
                  Ksh. {" "} {" "}{totalAmount}</h2></h3>
                       
                   </div>
-                  <Button size='large' variant='contained' color='primary' className='button' > Proceed To Check Out</Button>
+            <Button
+              size='large'
+              variant='contained'
+              color='primary'
+              className='button'
+              onClick={handleClick}
+            > Proceed To Check Out</Button>
                  
         </Paper>
         </Grid>

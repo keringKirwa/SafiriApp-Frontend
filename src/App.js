@@ -6,6 +6,7 @@ import { Navbar } from './NavBar/Navbar';
 import SignUp  from './Components/AuthForm/AuthForm.jsx';
 import { Products } from './Components/Products/Products';
 import { Seats } from './Components/Seats/Seats';
+import { PaymentModal } from "./Components/PaymentModal/PaymentModal";
 
 const App = () => {
   const user = JSON.parse(localStorage.getItem('profile'));
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/" exact element={<Home />} />
           <Route path="/products" exact element={<Products />} />
           <Route path="/products/:id" exact element={<Seats />} />
+           <Route path="/payment" exact element={<PaymentModal />} />
           
           <Route path="/auth" exact element={ !user ? <SignUp /> : <Navigate to="/" /> } />
           
