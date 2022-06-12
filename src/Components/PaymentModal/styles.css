@@ -19,16 +19,23 @@
     z-index: 2;
     border-radius: 20px;
 }
-.safiri{
+.safiriH2{
     margin-top: 3px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 20px;
     flex-wrap: nowrap;
+    gap: 5px;
     
 }
 .safiriButton{
     width: 200px;
     height: 50px;
+}
+.form{
+    gap: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
 }

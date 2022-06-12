@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 export const carSlice = createSlice({
   name: 'cars',
-  initialState: { isLoading: true, posts: [],post:{} },
+  initialState: { isLoading: true, posts: [],seats:[] },
 
   reducers: {
 
@@ -26,7 +26,7 @@ export const carSlice = createSlice({
 
     },
     oneCarFetched: (state,action) => {
-      state.post = action.payload.data;
+      state.seats = action.payload.data;/* where data is an array of seat objects(seats) */
       
        /* in this case , a payload is a single object.with Immer, here we are creating a new property called post. eg
        action={payload:{ name:'MaiLIMA', seats:'13',availableSeats:20  }} */

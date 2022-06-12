@@ -42,6 +42,8 @@ const useStyles = makeStyles((theme) => ({
   },
   icon: {
     marginRight: theme.spacing(1),
+    height: '30px',
+    width:'30px',
     [theme.breakpoints.up("sm")]: {
       fontSize: "18px",
     },
@@ -71,6 +73,10 @@ const Leftbar = () => {
       <div className={classes.item}>
         <Person className={classes.icon} />
         <Typography className={classes.text}>My Profile</Typography>
+        </div>
+        <div className={classes.item}>
+        <Bookmark className={classes.icon} />
+        <Typography className={classes.text}>My Tickets</Typography>
       </div>
       <div className={classes.item}>
         <List className={classes.icon} />
@@ -80,10 +86,7 @@ const Leftbar = () => {
         <TabletMac className={classes.icon} />
         <Typography className={classes.text}>Apps</Typography>
       </div>
-      <div className={classes.item}>
-        <Bookmark className={classes.icon} />
-        <Typography className={classes.text}>Collections</Typography>
-      </div>
+      
       <div className={classes.item}>
         <Storefront className={classes.icon} />
         <Typography className={classes.text}>Market Place</Typography>

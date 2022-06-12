@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import { Grid, Button, Paper } from '@material-ui/core';
 import Leftbar from '../LeftBar/LeftBar';
 import './styles.css'
@@ -7,6 +7,7 @@ import { addedSeat, removedSeat } from '../../reducers/selectedSeatsSlice';
 import Footer from '../Footer/Footer';
 import { PaymentModal } from '../PaymentModal/PaymentModal';
 import { useLocation } from 'react-router-dom';
+import { getOneCar } from '../../ActionCreators/carActionCreator';
 
 
 export const Seats = () => {
@@ -18,10 +19,16 @@ export const Seats = () => {
 
   const carId = new URLSearchParams(search).get('carId');
   const price = new URLSearchParams(search).get('price');
-  console.log(carId);
+
+  useEffect(() => {
+
+    getOneCar(carId,dispatch);
+    
+  }, [dispatch,carId]);
 
 
   /* TODO: anytime the seats componnet loads , then we send an axioxs request to the backend , the respponse will be used to desplay the order and the seats page . */
+  
 
   const carSeats = [
     { seatNumber: 1, taken: 0 },
@@ -149,7 +156,6 @@ export const Seats = () => {
                  
         </Paper>
         </Grid>
-
       
        
 

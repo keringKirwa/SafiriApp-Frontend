@@ -45,3 +45,10 @@
     background-color: beige;
 }
 
+.getAwarded{
+    text-align: center;
+    color: dodgerblue;
+    text-transform: capitalize;
+    font-weight: 10px;
+    font-size: 20px;
+}

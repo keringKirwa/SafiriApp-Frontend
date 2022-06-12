@@ -15,7 +15,7 @@ AxiosInstance.interceptors.request.use((req) => {
 
 
 
-export const getOneCar = async (id,dispatch) => {
+export const getOneCar = async (carId,dispatch) => {
 
   /* data here is a single object from the database,and not a variable holding that data*/
   
@@ -23,10 +23,10 @@ export const getOneCar = async (id,dispatch) => {
     
     dispatch(startLoading());
 
-    const { data } = await AxiosInstance.get(`/products/${id}`);
+    const { data } = await AxiosInstance.get(`/products/${carId}`);
     /* this data in this line actually refers to the actual object that is coming from the backend and NOT a variable , its the actual,actual data ie an object or an array/list  . */
 
-    dispatch(oneCarFetched({ data:data })); /* ie{ data :[10,20,30,40...]} */
+    dispatch(oneCarFetched({ data:data })); /* ie{ data :[seat objects]} */
       
     dispatch(endLoading());
       

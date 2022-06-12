@@ -27,9 +27,9 @@ const Footer = () => {
           <li className="fListItem">Seasonal and holiday deals </li>
         </ul>
       
-        <ul className="fList">
-          <li className="fListItem">Curtomer Service</li>
-          <li className="fListItem">Partner Help</li>
+          <ul className="fList">
+            <li className="fListItem"> <strong id='strong'>Customer Services</strong>  </li>
+            <li className="fListItem">Wifi Facilities</li>
           <li className="fListItem">Fixed Prices</li>
         
         </ul>

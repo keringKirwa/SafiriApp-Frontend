@@ -17,7 +17,7 @@ export const MiddleRow = () => {
     < div className='mainContainer' >
 
       <Typography variant='h4' >A lifetime of Discounts with Safiri.</Typography>
-      <h5 variant='h4'>Get Awarded for you travels - Unlock instant savings of 10% or more with free Safari Booking App</h5>
+      <h5 variant='h4' className='getAwarded'>Get Awarded for you travels - Unlock instant savings of 10% or more with free Safari Booking App</h5>
 
       <div className='ticket1'>     
         

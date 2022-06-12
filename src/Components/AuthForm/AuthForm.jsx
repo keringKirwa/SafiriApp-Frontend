@@ -4,6 +4,7 @@ import { Avatar, Typography, Grid, Button } from '@material-ui/core';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import PersonAddIcon from '@material-ui/icons/PersonAdd';
 
 import './styles.css';
 import { signIn,signUp } from '../../ActionCreators/authActionCreator';
@@ -34,27 +35,30 @@ const SignUp = () => {
   const handleChange = (e) =>
     setUserDetails({ ...userDetails, [e.target.name]: e.target.value });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault(); /* stop the browser from refreshing. */
 
     if (wantsToSignUp) {
 
-      /* we call the  action creators that have the reducers for updating the state of the appplication . */
-
-      signUp(userDetails, navigate, dispatch);
+      await signUp(userDetails, navigate, dispatch);
     } else {
       dispatch(signIn(userDetails, navigate,dispatch));
     }
+
+    /* TODO : call react Hot Toast here .this will await dispatch to end , and once the user deatils are poplated in the store , the compiller then proceeds to cal the toas() function . */
+    
+
   };
 
   return (
     <div className="paper" id="paper">
       <Avatar id="avatar">
-        <LockOutlinedIcon />
+        {wantsToSignUp ?<PersonAddIcon /> : <LockOutlinedIcon/>}
+        
       </Avatar>
 
       <Typography component="h1" variant="h5">
-        {wantsToSignUp ? 'Sign up' : 'Sign in'}
+        {wantsToSignUp ? 'Sign Up' : 'Sign In'}
       </Typography>
 
       <form onSubmit={handleSubmit}>
@@ -116,7 +120,7 @@ const SignUp = () => {
           <Grid item>
             <Button onClick={switchMode}>
               {wantsToSignUp
-                ? 'Already have an account? Sign in'
+                ? 'Already have an account? Sign In'
                 : "Don't have an account? Sign Up"}
             </Button>
           </Grid>
