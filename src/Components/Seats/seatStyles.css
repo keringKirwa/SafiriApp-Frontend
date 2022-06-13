@@ -74,8 +74,8 @@
 
 }
 
-.middleRow {
-    background-color:lightgrey;
+.middle {
+    background-color:rgba(211, 211, 211, 0.938);
     width: 530px;
     display: flex;
     flex-direction: row;

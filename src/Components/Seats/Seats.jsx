@@ -1,7 +1,8 @@
 import React,{useState,useEffect} from 'react'
 import { Grid, Button, Paper } from '@mui/material';
 import Leftbar from '../LeftBar/LeftBar';
-import './styles.css'
+import './seatStyles.css';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { addedSeat, removedSeat } from '../../reducers/selectedSeatsSlice';
 import Footer from '../Footer/Footer';
@@ -104,7 +105,7 @@ export const Seats = () => {
             
           <h1 id='almost'>Almost To the end , Select The Seats Remaining Below.Then proceed to check-Out</h1>
 
-          < div className='middleRow'> 
+          < div className='middle'> 
             
         <div className="empty"></div>
           

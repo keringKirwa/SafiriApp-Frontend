@@ -1,6 +1,7 @@
 import Leftbar from '../LeftBar/LeftBar';
 import { Form } from '../Form/Form';
 import Grid from '@mui/material/Grid';
+
 import { MiddleRow } from '../MiddleRow/MiddleRow';
 
 import './home.css'
@@ -20,11 +21,10 @@ const Home = () => {
         </Grid>
 
         <Grid item xs={6} sm={6}>
+
           <div className="middleRow">
-             <MiddleRow></MiddleRow>
-           
+            <MiddleRow />
           </div>
-          
         </Grid>
 
         <Grid item xs={3} sm={ 3}>

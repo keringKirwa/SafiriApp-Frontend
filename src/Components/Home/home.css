@@ -1,7 +1,12 @@
+.middleRow{
+    height: auto;
+    margin-left: 30px;
+    
+}
+
 .lefBarContainer{
-    width: 200px;
+    width: 230px;
     position: fixed;
-    height:  auto ;
-    top: 5px;
+    top: 0;
     border-right: 1px solid violet;
 }
