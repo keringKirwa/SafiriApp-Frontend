@@ -23,6 +23,9 @@ export const authSlice = createSlice({
       console.log(state.email);
     },
     signin: (state, action) => {
+
+      /* TODO : populate the user details to the local storage here not in the register page . */
+      
       
       localStorage.setItem('profile', JSON.stringify(action.payload.data));
 

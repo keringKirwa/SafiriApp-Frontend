@@ -9,3 +9,11 @@ useEffect(() => {
   console.log(loggedInUser);
   setUser(loggedInUser);
 });
+
+'source ~/.nvm/nvm.sh'; 'this is the command that worked for me dealing with nvm not installed .'
+' peerDeps are dependencies that you suggest your application to have  '
+
+'tilder is a shortcut to denote the users home directory.'
+'the Zshrc file is located in the users home directory. denoted by ~ '
+
+

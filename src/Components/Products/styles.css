@@ -5,4 +5,14 @@
 }
 .mainContainer{
     padding-top: 57px;
+    
+}
+
+.mainDivContainer{
+
+    width: 215px;
+    height: auto;
+    position: fixed;
+    border-right: 1px solid violet;
+    top: 0;
 }

@@ -1,5 +1,5 @@
 import "./footer.css";
-import { Paper, Button } from '@material-ui/core';
+import { Paper, Button, Typography } from '@mui/material';
 
 const Footer = () => {
   return (
@@ -38,8 +38,8 @@ const Footer = () => {
         <div className="sub">
            
           
-          <Button type="button" fullWidth variant="contained" color="primary" size="large" id="button1">
-        SubScribe </Button>
+          <Button type="button" fullWidth variant="contained" color="primary" size="small" id="button1"> <Typography className="h3Color"> SubScribe</Typography>
+       </Button>
         
 </div>
         

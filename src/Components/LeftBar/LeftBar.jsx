@@ -1,12 +1,13 @@
-import {  Typography } from "@material-ui/core";
-import Container from '@material-ui/core/Container';
+import { Typography } from '@mui/material';
+import Container from '@mui/material/Container';
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
+
+import './styles.css'
+
 
 
 import {
-
   Bookmark,
   List,
   ExitToApp,
@@ -15,91 +16,55 @@ import {
   Settings,
   Storefront,
   TabletMac,
-} from "@material-ui/icons";
+} from '@mui/icons-material';
 
 /* 100vh in the below case means that the height is full screen. */
 
-const useStyles = makeStyles((theme) => ({
-  container: {
-    height: "600px",
-    width: "15%",
-    alignItems:"center",
-    color: "black",
-    paddingTop: theme.spacing(15),
-    position: "fixed",
-    marginRight:'0px',
-    top: 0,
-    borderRight: "1px solid violet",
-  },
-  item: {
-    display: "flex",
-    alignItems: "center",
-    marginBottom: theme.spacing(4),
-    [theme.breakpoints.up("sm")]: {
-      marginBottom: theme.spacing(3),
-      cursor: "pointer",
-    },
-  },
-  icon: {
-    marginRight: theme.spacing(1),
-    height: '30px',
-    width:'30px',
-    [theme.breakpoints.up("sm")]: {
-      fontSize: "18px",
-    },
-  },
-  text: {
-    fontWeight: 550,
-    [theme.breakpoints.down("sm")]: {
-      display: "none",
-    },
-  },
-}));
+
 
 const Leftbar = () => {
-  const classes = useStyles();
   
   return (
 
-    <Container className={classes.container}>
-      
-      <div>
-      <div className={classes.item}>
+    <Container className='mainContainer'>
+
+      <div className='mainDivItem'>
         <Link to="/">
-          <Home className={classes.icon} />
+          <Home className='icon' />
         </Link>
-        <Typography className={classes.text}>Homepage</Typography>
+        <Typography className='text'>Homepage</Typography>
       </div>
-      <div className={classes.item}>
-        <Person className={classes.icon} />
-        <Typography className={classes.text}>My Profile</Typography>
+      <div className='mainDivItem'>
+        <Person className='icon' />
+        <Typography className='text'>My Profile</Typography>
         </div>
-        <div className={classes.item}>
-        <Bookmark className={classes.icon} />
-        <Typography className={classes.text}>My Tickets</Typography>
+        <div className='mainDivItem'>
+        <Bookmark className='icon' />
+        <Typography className='text'>My Tickets</Typography>
       </div>
-      <div className={classes.item}>
-        <List className={classes.icon} />
-        <Typography className={classes.text}>Categories</Typography>
+      <div className='mainDivItem'>
+        <List className='icon' />
+        <Typography className='text'>Categories</Typography>
       </div>      
-      <div className={classes.item}>
-        <TabletMac className={classes.icon} />
-        <Typography className={classes.text}>Apps</Typography>
+      <div className='mainDivItem'>
+        <TabletMac className='icon' />
+        <Typography className='text'>Apps</Typography>
       </div>
       
-      <div className={classes.item}>
-        <Storefront className={classes.icon} />
-        <Typography className={classes.text}>Market Place</Typography>
+      <div className='mainDivItem'>
+        <Storefront className='icon' />
+        <Typography className='text'>Market Place</Typography>
       </div>
-      <div className={classes.item}>
-        <Settings className={classes.icon} />
-        <Typography className={classes.text}>Acc.Settings</Typography>
+      <div className='mainDivItem'>
+        <Settings className='icon' />
+        <Typography className='text'>Acc.Settings</Typography>
       </div>
-      <div className={classes.item}>
-        <ExitToApp className={classes.icon} />
-        <Typography className={classes.text}>Logout</Typography>
+
+      <div className='mainDivItem'>
+        <ExitToApp className='icon' />
+        <Typography className='text'>Logout</Typography>
         </div>
-        </div>
+      
 
     </Container>
   );

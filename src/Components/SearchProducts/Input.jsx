@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, TextField, } from '@material-ui/core';
+import { TextField,Grid } from '@mui/material';
 
 
 /* just like calling a function and passing parameters to it , so is the Input component .among the arquments passed are the handleChange function , half flag etc */

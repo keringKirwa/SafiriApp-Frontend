@@ -1,6 +1,9 @@
 #notLoggedInPaper{
 
     border-left: 1px solid violet;
+    position: fixed;
+    top: 100px;
+    right: 0;
 }
 
 #SafariImage{

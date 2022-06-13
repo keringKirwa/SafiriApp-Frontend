@@ -1,7 +1,7 @@
 import React from 'react';
-import { Grid, InputAdornment, TextField, IconButton } from '@material-ui/core';
-import VisibilityOff  from '@material-ui/icons/VisibilityOff';
-import  Visibility from '@material-ui/icons/Visibility';
+import { Grid, InputAdornment, TextField, IconButton } from '@mui/material';
+import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined';
+import VisibilityIcon from '@mui/icons-material/Visibility';
 
 /* just like calling a function and passing parameters to it , so is the Input component .among the arquments passed are the handleChange function , half flag etc */
 
@@ -20,7 +20,7 @@ const Input = ({ name, handleChange, label, half, autoFocus, type, handleShowPas
         endAdornment: (
           <InputAdornment position="end">
             <IconButton onClick={handleShowPassword}>
-              {type === 'password' ? <Visibility /> : <VisibilityOff />}
+              {type === 'password' ? <VisibilityIcon/> : <VisibilityOffOutlinedIcon />}
             </IconButton>
           </InputAdornment>
         ),

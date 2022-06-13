@@ -3,7 +3,7 @@
 /* TODO import CircularProgress , useEffect, useSelector, set Page variable ===1 AND then dispatch actions using action creators from the redux toolkit the */
 
 import React from 'react';
-import { Grid, } from '@material-ui/core';
+import Grid  from '@mui/material/Grid';
 
 import { Product } from '../Product/Product';
 import Leftbar from '../LeftBar/LeftBar';
@@ -70,11 +70,14 @@ export const Products = () => {
   
     return (
       <div>
-            <Grid container className='mainContainer' alignItems="stretch">
+        <Grid container className='mainContainer' alignItems="stretch">
                
-                <Grid item sm={2}>
-                    <Leftbar/>
-                </Grid>
+          <Grid item sm={2}>
+            <div className="mainDivContainer">
+              <Leftbar/>
+            </div>
+            
+          </Grid>
 
           <Grid item sm={6}>
             
@@ -84,14 +87,14 @@ export const Products = () => {
               {cars.map((car) => (<Product car={car}/>))}
             </div>
                    
-               </Grid>
+        </Grid>
           
-                <Grid item sm={4}>
-                    <SearchProducts></SearchProducts>
-                 </Grid>
+          <Grid item sm={3}>
+            <SearchProducts></SearchProducts>
+          </Grid>
                 
-           </Grid>
-            </div>
+        </Grid>
+      </div>
     
     );
 };

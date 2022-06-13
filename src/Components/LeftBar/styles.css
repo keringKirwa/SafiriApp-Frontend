@@ -1,0 +1,19 @@
+
+.mainDivItem{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 32px;
+
+}
+.icon{
+    margin-right: 8px;
+    font-size: 28px;
+}
+
+.text{
+    font-size: 15px;
+    font-weight: bold;
+
+    
+}

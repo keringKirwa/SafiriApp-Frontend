@@ -1,11 +1,11 @@
 .mainDiv{
     height: 300px;
-    width: 700px;
+    width: 670px;
     background-color:beige;
     margin-top: 80px;
     position: fixed;
     top: 20px;
-    left: 210px;
+    left: 230px;
     z-index: 2;
     border-radius: 20px;
     display: flex;
@@ -38,4 +38,8 @@
     flex-direction: row;
     align-items: center;
     gap: 10px;
+}
+
+.h3Color{
+    color: goldenrod;
 }

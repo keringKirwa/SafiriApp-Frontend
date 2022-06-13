@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import Input from './Input';
-import { Avatar, Typography, Grid, Button } from '@material-ui/core';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import { Avatar, Grid, Button, Typography } from '@mui/material';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import PersonAddIcon from '@material-ui/icons/PersonAdd';
 
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import PersonAddOutlinedIcon from '@mui/icons-material/PersonAddOutlined';
+
+import { signIn, signUp } from '../../ActionCreators/authActionCreator';
 import './styles.css';
-import { signIn,signUp } from '../../ActionCreators/authActionCreator';
 
 const initialState = {
   firstName: '',
@@ -53,7 +54,7 @@ const SignUp = () => {
   return (
     <div className="paper" id="paper">
       <Avatar id="avatar">
-        {wantsToSignUp ?<PersonAddIcon /> : <LockOutlinedIcon/>}
+        {wantsToSignUp ?<PersonAddOutlinedIcon /> : <LockOutlinedIcon/>}
         
       </Avatar>
 

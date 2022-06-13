@@ -5,14 +5,16 @@
     padding-top: 102px;
 
 }
+
 #cart{
     width: 420px;
     height: 475px;
     padding-top: 100px;
     margin: 20px;
     border-radius: 20px;
-    border: 3px violet;
     background-color:beige;
+    padding-left: 20px;
+    border-left: 1px solid violet;
     position: fixed;
     gap: 10px;
 
@@ -41,6 +43,11 @@
     right: -30px;
     height: 40px;
     border-radius: 10px;
+}
+
+.h3color{
+    color: goldenrod;
+    font-weight: 1000px;
 }
 #almost{
     font-family: 'Uchen', serif;
@@ -108,4 +115,11 @@ input.checkBox{
     justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
+}
+.leftBarContainer{
+    width: 215px;
+    height: auto ;
+    position: fixed;
+    border-right: 1px solid violet;
+    
 }

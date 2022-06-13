@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import './styles.css'
-import { Button, Grid } from '@material-ui/core';
+import { Button, Grid } from '@mui/material';
 import safiriImage from '../../../src/images/safaricom.png'
 import Input from './Input';
 
@@ -37,7 +37,7 @@ export const PaymentModal = ({ stateVariable } = this.props.first) => {
         </Grid>
 
         <Button variant='contained' type='submit' color='primary' className='safiriButton'
-         onSubmit={handleSubmit} > Pay Now ✅</Button>
+         onSubmit={handleSubmit} > <h3 className="h3Color">Pay Now ✅</h3> </Button>
           
         </form>
 

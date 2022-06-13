@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Input from './Input';
-import { Avatar, Typography, Grid, Button } from '@material-ui/core';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import { Avatar, Typography, Grid, Button } from '@mui/material';
+import LockIcon from '@mui/icons-material/Lock';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
@@ -39,7 +39,7 @@ export const Login = () => {
         <div className="paper" id="paper">
 
             <Avatar id="avatar">
-                <LockOutlinedIcon />
+                <LockIcon />
             </Avatar>
 
             <Typography component="h1" variant="h5">

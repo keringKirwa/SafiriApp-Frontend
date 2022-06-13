@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import Input from './Input';
-import { Grid, Button } from '@material-ui/core';
-
-
-import './stylesSearch.css'
-import { getCarsBySearch } from '../../ActionCreators/carActionCreator';
 import { useDispatch } from 'react-redux';
+import { Button, Grid, Typography } from '@mui/material';
+
+import { getCarsBySearch } from '../../ActionCreators/carActionCreator';
+import './stylesSearch.css';
+import Input from './Input';
 
 
 const initialState = { from: '', destination: '', date: '', };
@@ -52,7 +51,7 @@ export const SearchProducts = () => {
         </Grid>
         
 
-        <Button type="submit" fullWidth variant="contained" color="primary" onSubmit={handleSubmit} id='search'> Search </Button>
+        <Button type="submit" fullWidth variant="contained" color="primary" onSubmit={handleSubmit} id='search'>  <Typography className="h3Container">Search</Typography> </Button>
           
         </form>
       </div>
