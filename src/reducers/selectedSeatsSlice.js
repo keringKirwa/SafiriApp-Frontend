@@ -6,7 +6,8 @@ export const selectedSeatsSlice = createSlice({
 
   reducers: {
 
-    addedSeat: (state,action) => {
+    addedSeat: (state, action) => {
+      /* in thsi case we will have to first spread all the properties of the selectedSeats array and then add new seats . */
 
       state.seatsSelected = [...state.seatsSelected,action.payload.data.seatNo];
     },

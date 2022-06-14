@@ -17,7 +17,7 @@ export const carSlice = createSlice({
     },
     allCarsFetched: (state, action) => {
 
-      state.posts = action.payload;/* where payload is an array of data from the backend.Again note that we are only changing the posts property and not the isLoading. */
+      state.posts = action.payload;/* where payload is an array of data from the backend.Again note that we are only changing the posts property and not the isLoading. Again note that awe are overriding the posts array and maintaining all the other prperties of the initialState.*/
 
     },
     carsFetchedBySearch: (state, action) => {

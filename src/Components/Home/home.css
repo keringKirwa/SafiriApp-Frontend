@@ -1,12 +1,22 @@
+.home{
+    background-image: url('../../images/wintery-sunburst\ \(1\).svg');
+    background-position: center;
+    background-size: cover;
+
+}
+
 .middleRow{
     height: auto;
     margin-left: 30px;
     
 }
 
+
 .lefBarContainer{
     width: 230px;
     position: fixed;
     top: 0;
     border-right: 1px solid violet;
+    height: 600px;
+    gap: 30px;
 }

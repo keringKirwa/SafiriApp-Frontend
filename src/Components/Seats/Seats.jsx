@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react'
+import React, { useState, useEffect } from 'react';
 import { Grid, Button, Paper } from '@mui/material';
 import Leftbar from '../LeftBar/LeftBar';
 import './seatStyles.css';
@@ -9,10 +9,9 @@ import Footer from '../Footer/Footer';
 import { PaymentModal } from '../PaymentModal/PaymentModal';
 import { useLocation } from 'react-router-dom';
 import { getOneCar } from '../../ActionCreators/carActionCreator';
-
+import { toast } from 'react-hot-toast';
 
 export const Seats = () => {
-
   const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
 
@@ -22,14 +21,10 @@ export const Seats = () => {
   const price = new URLSearchParams(search).get('price');
 
   useEffect(() => {
-
-    getOneCar(carId,dispatch);
-    
-  }, [dispatch,carId]);
-
+    getOneCar(carId, dispatch);
+  }, [dispatch, carId]);
 
   /* TODO: anytime the seats componnet loads , then we send an axioxs request to the backend , the respponse will be used to desplay the order and the seats page . */
-  
 
   const carSeats = [
     { seatNumber: 1, taken: 0 },
@@ -43,129 +38,123 @@ export const Seats = () => {
     { seatNumber: 9, taken: 1 },
     { seatNumber: 10, taken: 0 },
     { seatNumber: 11, taken: 0 },
-    { seatNumber: 12, taken: 0 }
-  ]
+    { seatNumber: 12, taken: 0 },
+  ];
 
   const seatsArray = useSelector((state) => state.selectedSeats.seatsSelected);
-  const numberOfSeats = seatsArray.length ||  0;
+  const numberOfSeats = seatsArray.length || 0;
   const totalAmount = price * numberOfSeats || 0;
-
 
   const stateVariable = {
     price: totalAmount,
     seats: seatsArray,
-  }
-   
-  
+  };
 
   const handleSelect = (event) => {
-    
-    
     const checked = event.target.checked;
     const value = event.target.value;
 
     /* note that it is always advisable that we dispatch an object to the store , that object will be called the payload. that is action.payload.data.seatNo will give us the seat ID */
 
     if (checked) {
-
-      dispatch(addedSeat({data:{seatNo:value}}));
-      
-    }
-    else {
+      dispatch(addedSeat({ data: { seatNo: value } }));
+    } else {
       dispatch(removedSeat({ data: { seatNo: value } }));
     }
-  }
+  };
 
   const handleClick = () => {
     if (totalAmount !== 0) {
-       setOpen((prevIsOpen) => !prevIsOpen);
-      
+      setOpen((prevIsOpen) => !prevIsOpen);
     } else {
+      toast.error('You Have Not Reserved Any Seat(s) Yet !!! ');
       return;
     }
-   
-  }
+  };
 
-    return (
-      <Grid container >
-        
-        {open && <PaymentModal stateVariable={ stateVariable}/>}
-        
-        
-          <Grid item xs={2} sm={2}>
-          <div className="leftBarContainer">
-            <Leftbar />
-          </div>
-        </Grid>
-        
-       
+  return (
+    <Grid container>
+      {open && <PaymentModal stateVariable={stateVariable} />}
 
-        <Grid item xs={6} sm={ 6}>
-          <div id='mainContainer'>
-            
-          <h1 id='almost'>Almost To the end , Select The Seats Remaining Below.Then proceed to check-Out</h1>
+      <Grid item xs={2} sm={2}>
+        <div className="leftBarContainer">
+          <Leftbar />
+        </div>
+      </Grid>
 
-          < div className='middle'> 
-            
-        <div className="empty"></div>
-          
+      <Grid item xs={6} sm={6}>
+        <div id="mainContainer">
+          <h1 id="almost">
+            Almost To the end , Select The Seats Remaining Below.Then proceed to
+            check-Out
+          </h1>
+
+          <div className="middle">
+            <div className="empty"></div>
+
             {carSeats.map((seatObject) => (
               <div className="seatBox">
-                <label htmlFor="c">{seatObject.seatNumber === 1 ? 'Driver' : seatObject.seatNumber}</label>
-                
+                <label htmlFor="c">
+                  {seatObject.seatNumber === 1
+                    ? 'Driver'
+                    : seatObject.seatNumber}
+                </label>
+
                 <input
                   type="checkbox"
-                  id='c'
+                  id="c"
                   value={seatObject.seatNumber}
-                  className='checkBox'
-                  disabled={seatObject.seatNumber === 1 || seatObject.seatNumber === 5 || seatObject.taken === 1 ? true : false}
+                  className="checkBox"
+                  disabled={
+                    seatObject.seatNumber === 1 ||
+                    seatObject.seatNumber === 5 ||
+                    seatObject.taken === 1
+                      ? true
+                      : false
+                  }
                   onChange={handleSelect}
                 />
-              
-              </div>))}
+              </div>
+            ))}
           </div>
           <Footer></Footer>
-         
-          </div>
+        </div>
       </Grid>
 
-        <Grid item xs={3} sm={3}>
-          
-      
+      <Grid item xs={3} sm={3}>
         {/* NOTE that the data in the paper below are all from the store and not the database, that is , we dont initially keep the ticket data in the datbase , until when the user makes a payment.*/}
-        
 
-            <Paper id='cart' elevation={6}>
-                  <h2>Order Summary</h2>
-                  <h3 id='proceedText'>Almost to the end ! Proceed to checkOut and Receive a ticket.</h3>
-                  <div className="actualTicket">
-                      <h3>From : Nairobi</h3>
-                      <h3>To : Eldoret</h3>
-              <h3 className='seatsMapped'>selected Seats  : {"  "}
-               
-                 {seatsArray.map((seat) => (
-                  <h2>{ seat},</h2>
+        <Paper id="cart" elevation={6}>
+          <h2>Order Summary</h2>
+          <h3 id="proceedText">
+            Almost to the end ! Proceed to checkOut and Receive a ticket.
+          </h3>
+          <div className="actualTicket">
+            <h3>From : Nairobi</h3>
+            <h3>To : Eldoret</h3>
+            <h3 className="seatsMapped">
+              selected Seats : {'  '}
+              {seatsArray.map((seat) => (
+                <h2>{seat},</h2>
               ))}
-              </h3>
-              
-              <h3 id='h3price'>Price :{" "} {numberOfSeats} * {price}  = <h2>
-                 Ksh. {" "} {" "}{totalAmount}</h2></h3>
-                      
-                  </div>
-            <Button
-              size='large'
-              variant='contained'
-              color='primary'
-              className='button'
-              onClick={handleClick}
-            >  <div className="h3color">Proceed to checkOut</div></Button>
-                 
-        </Paper>
-        </Grid>
-      
-       
+            </h3>
 
+            <h3 id="h3price">
+              Price : {numberOfSeats} * {price} = <h2>Ksh. {totalAmount}</h2>
+            </h3>
+          </div>
+          <Button
+            size="large"
+            variant="contained"
+            color="primary"
+            className="button"
+            onClick={handleClick}
+          >
+            {' '}
+            <div className="h3color">Proceed to checkOut</div>
+          </Button>
+        </Paper>
       </Grid>
-      
-  )
-}
+    </Grid>
+  );
+};

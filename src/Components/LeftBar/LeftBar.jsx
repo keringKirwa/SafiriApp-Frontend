@@ -18,9 +18,6 @@ import {
   TabletMac,
 } from '@mui/icons-material';
 
-/* 100vh in the below case means that the height is full screen. */
-
-
 
 const Leftbar = () => {
   

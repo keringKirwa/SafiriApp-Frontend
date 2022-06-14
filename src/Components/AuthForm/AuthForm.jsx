@@ -3,7 +3,7 @@ import Input from './Input';
 import { Avatar, Grid, Button, Typography } from '@mui/material';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import PersonAddOutlinedIcon from '@mui/icons-material/PersonAddOutlined';
@@ -41,22 +41,23 @@ const SignUp = () => {
     e.preventDefault(); /* stop the browser from refreshing. */
 
     if (wantsToSignUp) {
+      if (userDetails.password !== userDetails.confirmPassword) {
+        toast.error('Password and ConfirmPassword must be the same!!');
+        return;
+      }
 
       await signUp(userDetails, navigate, dispatch);
     } else {
-      dispatch(signIn(userDetails, navigate,dispatch));
+      dispatch(signIn(userDetails, navigate, dispatch));
     }
 
     /* TODO : call react Hot Toast here .this will await dispatch to end , and once the user deatils are poplated in the store , the compiller then proceeds to cal the toas() function . */
-    
-
   };
 
   return (
     <div className="paper" id="paper">
       <Avatar id="avatar">
-        {wantsToSignUp ?<PersonAddOutlinedIcon /> : <LockOutlinedIcon/>}
-        
+        {wantsToSignUp ? <PersonAddOutlinedIcon /> : <LockOutlinedIcon />}
       </Avatar>
 
       <Typography component="h1" variant="h5">

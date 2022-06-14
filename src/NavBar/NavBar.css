@@ -1,58 +1,74 @@
-#header{
-    font-family: 'Tangerine', cursive;
-        font-family: 'Uchen', serif;
-        font-size: 40px;
-        margin-left: 20px;
-       
+.appBar{
+    height: 100px;
+    
 }
+
+
+.toolbarMain{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: inherit;
+    height: 98px;
+    color: lightgoldenrodyellow
+
+
+
+}
+
+#header {
+    font-family: 'Tangerine', cursive;
+    font-family: 'Uchen', serif;
+    font-size: 40px;
+    margin-left: 5px;
+
+}
+
 #header1 {
     font-family: 'Tangerine', cursive;
-        font-family: 'Uchen', serif;
-        font-size: 30px;
-        position: relative;
-        bottom: -25px;
-}
-#emailTypo{
-    position: relative;
-    top: 50px;
-
-}
-#signInTypo{
-    position:absolute;
-    top:0;
-    left: 20%;
+    font-family: 'Uchen', serif;
+    font-size: 30px;
+   
 }
 
-#user{
+#introducing{
+    color: rgba(218, 165, 32, 0.849);
+}
+
+#signInTypo {
     position: absolute;
-    top:0px;
+    top: 0;
+    left: 20%;
+    color: rgba(218, 165, 32, 0.849);
 }
 
-#logout{
+#user {
+    position: absolute;
+    top: 0px;
+}
+
+#logout {
     position: relative;
     top: 15px;
     border-radius: 0px 0px 0px 20px;
     text-emphasis-color: black;
 }
-.appBar{
-    display: flex;
-    flex-direction: row;
-    position: fixed;
-    top: 0;
-    justify-content: flex-start;
-    height: 100px;
-    background-color: orange;
-    padding: 5px;
+
+.h3Div{
+    color: goldenrod;
 }
 
-.loginButton{
-    border-radius: 30px 0px;
-    box-shadow:0px 4px 2px black ;
 
+#loginButton{
+    border-radius: 30px 0px;  
+    background-color: rgba(0, 0, 139, 0.432);  
 }
 
-.logoutDiv{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#phoneTypo{
+    color: goldenrod;
+}
+#emailTypo {
+    color: rgb(212, 171, 68);
 }

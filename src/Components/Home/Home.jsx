@@ -9,7 +9,7 @@ import './home.css'
 
 const Home = () => {
   return (
-    <div>
+    <div className='home'>
       <Grid container spacing={1} >
 
 
@@ -20,16 +20,14 @@ const Home = () => {
           
         </Grid>
 
-        <Grid item xs={6} sm={6}>
+        <Grid item xs={9} sm={9}>
 
           <div className="middleRow">
             <MiddleRow />
           </div>
         </Grid>
 
-        <Grid item xs={3} sm={ 3}>
-          <Form></Form>
-        </Grid> 
+       
         
       </Grid>
       

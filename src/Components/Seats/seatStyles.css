@@ -118,7 +118,7 @@ input.checkBox{
 }
 .leftBarContainer{
     width: 215px;
-    height: auto ;
+    height: 600px;
     position: fixed;
     border-right: 1px solid violet;
     
