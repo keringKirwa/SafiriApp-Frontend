@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { login, signup } from '../reducers/authSlice';
+import { userDetailsFetched } from '../reducers/settingsSlice';
 import { toast } from 'react-hot-toast';
 
 const axiosInstance = axios.create({ baseURL: 'http://localhost:5000' });
@@ -58,8 +59,29 @@ export const signUp = async (formData, navigate, dispatch) => {
 
     console.log(error);
 
-    toast.error(error.message);
+    toast.error(error.response.data.message || error.message);
 
     console.log(typeof error);
+  }
+};
+
+/* ------------------------------------------------------------ */
+
+export const updateAccountDetails = async (
+  formData,
+  dispatch,
+  setUserDetails
+) => {
+  try {
+    /* note that data refers to the object inside the res.status().json() method . */
+
+    const { data } = await axiosInstance.post('/user/settings', formData);
+    setUserDetails(data.userDetails);
+
+    dispatch(userDetailsFetched({ data: data.userDetails }));
+    console.log('successsfully fetched data from the database. !!! Kirwa ');
+  } catch (error) {
+    console.log(error);
+    toast.error(error.response.data.message || error.message);
   }
 };

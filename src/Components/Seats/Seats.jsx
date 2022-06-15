@@ -133,8 +133,8 @@ export const Seats = () => {
             Almost to the end ! Proceed to checkOut and Receive a ticket.
           </h3>
           <div className="actualTicket">
-            <h3 className='route'>From : <h2 className='margin'>{from}</h2> </h3>
-            <h3 className='route'>To : <h2 id='margin'>{ to}</h2> </h3>
+            <h4 className='route'>From : <h3 className='margin'>{from}</h3> </h4>
+            <h4 className='route'>To : <h3 className='margin'>{ to}</h3> </h4>
             <h3 className="seatsMapped">
               selected Seats : {'  '}
               {seatsArray.map((seat) => (

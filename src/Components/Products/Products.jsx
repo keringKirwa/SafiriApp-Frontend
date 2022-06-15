@@ -18,6 +18,7 @@ import { useDispatch } from 'react-redux';
 export const Products = () => {
   const dispatch = useDispatch();
   
+  
   useEffect(() => {
     getAllCars(dispatch);
     

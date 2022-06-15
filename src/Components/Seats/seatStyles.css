@@ -43,7 +43,7 @@
     right: -30px;
     height: 40px;
     border-radius: 10px;
-    top: 20px;
+    top: 5px;
 }
 
 .h3color{
@@ -136,5 +136,5 @@ input.checkBox{
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 5px;
+    margin: -3px;
 }
