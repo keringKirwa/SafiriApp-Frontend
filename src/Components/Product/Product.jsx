@@ -46,7 +46,7 @@ export const Product = ({ car }) => {
         <div className="siDetailTexts">
           <span className="siPrice">Ksh. { car.price}</span>
 
-          <Link to={`/home/products/${car.carId}?carId=${car.carId}&price=${car.price}`} ><button className="siCheckButton" >See availability</button></Link>
+          <Link to={`/home/products/${car.carId}?carId=${car.carId}&price=${car.price}&from=${car.from}&destination=${car.to}`} ><button className="siCheckButton" >See availability</button></Link>
           
         </div>
       </div>

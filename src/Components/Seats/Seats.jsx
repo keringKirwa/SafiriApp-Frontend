@@ -19,6 +19,9 @@ export const Seats = () => {
 
   const carId = new URLSearchParams(search).get('carId');
   const price = new URLSearchParams(search).get('price');
+  const from = new URLSearchParams(search).get('from');
+  const to = new URLSearchParams(search).get('destination');
+
 
   useEffect(() => {
     getOneCar(carId, dispatch);
@@ -130,8 +133,8 @@ export const Seats = () => {
             Almost to the end ! Proceed to checkOut and Receive a ticket.
           </h3>
           <div className="actualTicket">
-            <h3>From : Nairobi</h3>
-            <h3>To : Eldoret</h3>
+            <h3 className='route'>From : <h2 className='margin'>{from}</h2> </h3>
+            <h3 className='route'>To : <h2 id='margin'>{ to}</h2> </h3>
             <h3 className="seatsMapped">
               selected Seats : {'  '}
               {seatsArray.map((seat) => (

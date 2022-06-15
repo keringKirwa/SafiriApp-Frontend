@@ -43,6 +43,7 @@
     right: -30px;
     height: 40px;
     border-radius: 10px;
+    top: 20px;
 }
 
 .h3color{
@@ -61,7 +62,14 @@
     flex-direction: row;
     align-items: center;
     gap: 10px;
+    margin: 6px 10px;
 
+}
+.margin{
+    margin-left: 20px;
+}
+#margin{
+    margin-left: 40px;
 }
 
 
@@ -122,4 +130,11 @@ input.checkBox{
     position: fixed;
     border-right: 1px solid violet;
     
+}
+
+.route{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 5px;
 }

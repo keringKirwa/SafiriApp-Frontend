@@ -27,7 +27,7 @@ export const Navbar = () => {
     dispatch(logout());
     setUser(null);
     localStorage.clear();
-    navigate('/register');
+    navigate('/home/login');
   };
 
   /* but why use LocalStorage in the code below , the reason is that the react Hooks cannot be called inside a callbacks , that is , useSelector cannot be called inside the callback of useEffect. */
@@ -62,7 +62,7 @@ export const Navbar = () => {
 
               <Button
                 variant="contained"
-                color="secondary"
+                color="error"
                 id="logout"
                 onClick={handleLogout}
               >

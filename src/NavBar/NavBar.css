@@ -1,10 +1,10 @@
-.appBar{
+.appBar {
     height: 100px;
-    
+
 }
 
 
-.toolbarMain{
+.toolbarMain {
 
     display: flex;
     flex-direction: row;
@@ -13,9 +13,6 @@
     flex-grow: inherit;
     height: 98px;
     color: lightgoldenrodyellow
-
-
-
 }
 
 #header {
@@ -30,10 +27,10 @@
     font-family: 'Tangerine', cursive;
     font-family: 'Uchen', serif;
     font-size: 30px;
-   
+
 }
 
-#introducing{
+#introducing {
     color: rgb(245, 189, 49);
 }
 
@@ -45,30 +42,32 @@
 }
 
 #user {
-    position: absolute;
-    top: 0px;
+    font-family: 'Charmonman', cursive;
+    font-size: 50px;
+    
 }
 
 #logout {
     position: relative;
-    top: 15px;
+    top: -14px;
     border-radius: 0px 0px 0px 20px;
     text-emphasis-color: black;
 }
 
-.h3Div{
+.h3Div {
     color: goldenrod;
 }
 
 
-#loginButton{
-    border-radius: 30px 0px;  
-    background-color: rgba(0, 0, 139, 0.432);  
+#loginButton {
+    border-radius: 30px 0px;
+    background-color: rgba(0, 0, 139, 0.432);
 }
 
-#phoneTypo{
+#phoneTypo {
     color: rgb(245, 203, 97);
 }
+
 #emailTypo {
     color: rgb(245, 203, 97);
 }
