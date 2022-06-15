@@ -34,7 +34,7 @@
 }
 
 #introducing{
-    color: rgba(218, 165, 32, 0.849);
+    color: rgb(245, 189, 49);
 }
 
 #signInTypo {
@@ -67,8 +67,8 @@
 }
 
 #phoneTypo{
-    color: goldenrod;
+    color: rgb(245, 203, 97);
 }
 #emailTypo {
-    color: rgb(212, 171, 68);
+    color: rgb(245, 203, 97);
 }
