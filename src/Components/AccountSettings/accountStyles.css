@@ -1,9 +1,5 @@
-.mainAccountDiv{
-    padding-top: 110px;
-    background-color:yellow;
-    height: 500px;
-    width: 400px;
-    position: absolute;
-    left:400px ;
-
+.paper{
+    width: 380px;
+    position: relative;
+    left: 450px;
 }

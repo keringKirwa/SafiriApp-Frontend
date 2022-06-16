@@ -1,0 +1,21 @@
+.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(214, 214, 205) ;
+    gap: 3px;
+    z-index: 2;
+}
+
+#modalDescription{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px;
+
+}
+
+
+/*  background-color:rgb(241, 241, 177);
+ */

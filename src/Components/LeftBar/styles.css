@@ -4,18 +4,29 @@
     flex-direction: row;
     align-items: center;
     margin-bottom: 35px;
+    color: black;
     
 }
 
 .icon{
     margin-right: 8px;
     font-size: 28px;
+    color: black;
+}
+.profile{
+    position: relative;
+    left: -5px;
+    color: black;
 }
 
 .text{
     font-size: 18px;
-    font-weight: 1000;
+    font-weight: bold;
     
+}
 
-    
+@media screen and (max-width: 600px) {
+    .text {
+    display: none;
+    }
 }
