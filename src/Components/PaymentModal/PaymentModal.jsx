@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
-import './styles.css';
 import { Button, Grid } from '@mui/material';
+
 import safiriImage from '../../../src/images/safaricom.png';
 import Input from './Input';
+import './styles.css';
 
 export const PaymentModal = ({ stateVariable } = this.props.first) => {
   const [userDetails, setUserDetails] = useState({
     amount: stateVariable.price,
+    date: stateVariable.date,
+    time: stateVariable.time,
+    seatsSelected:stateVariable.seats,
     phoneNumber: '',
   });
 

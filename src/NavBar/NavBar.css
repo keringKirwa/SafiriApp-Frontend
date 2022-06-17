@@ -49,8 +49,6 @@
 }
 
 #logout {
-    position: relative;
-    top: -5px;
     border-radius: 0px 0px 0px 20px;
     text-emphasis-color: black;
 }

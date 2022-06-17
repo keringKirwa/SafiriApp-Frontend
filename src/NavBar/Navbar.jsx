@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { AppBar, Typography, Toolbar, Button } from '@mui/material';
+import { IconButton } from '@mui/material';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { logout } from '../reducers/authSlice';
@@ -7,13 +9,18 @@ import { logout } from '../reducers/authSlice';
 import { useDispatch } from 'react-redux';
 
 import './NavBar.css';
-
-/* the Height of my navbar is 100px that is from the top  of the viewport */
+import { MyDp } from '../Components/UserProfile/MyDp';
 
 export const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
+
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen((prevIsOpen)=>!prevIsOpen);
+  }
 
   const [user, setUser] = useState(
     JSON.parse(localStorage.getItem('profile'))?.name
@@ -30,11 +37,11 @@ export const Navbar = () => {
     navigate('/home/login');
   };
 
-  /* but why use LocalStorage in the code below , the reason is that the react Hooks cannot be called inside a callbacks , that is , useSelector cannot be called inside the callback of useEffect. */
-
   return (
+
     <AppBar style={{ marginBottom: '10px' }} className="appBar">
-      {/* for the toolabar , dispaly is a flex, flex-diretionis a row . app bar uses display column */}
+    
+      {open && <MyDp open={open} setOPen={setOpen} /> }
 
       <Toolbar className="toolbarMain">
         <h2 className="fontFamily" id="header1">
@@ -59,6 +66,8 @@ export const Navbar = () => {
               <Typography variant="h5" id="user">
                 {user.split(' ')[0]}
               </Typography>
+              
+               <IconButton onClick={handleOpen}><ArrowDropDownIcon size='large'></ArrowDropDownIcon>Profile</IconButton>
 
               <Button
                 variant="contained"
@@ -68,6 +77,7 @@ export const Navbar = () => {
               >
                 Logout
               </Button>
+             
             </div>
           ) : (
             <Button
@@ -80,7 +90,8 @@ export const Navbar = () => {
             >
               {' '}
               <div className="h3Div">Sign In </div>
-            </Button>
+              </Button>
+             
           )}
         </div>
       </Toolbar>

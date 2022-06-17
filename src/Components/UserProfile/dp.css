@@ -1,0 +1,29 @@
+.dpdiv{
+    height: 200px;
+    width: 420px;
+    padding: 10px;
+    background-color: yellow;
+    position: fixed;
+    right: 0px;
+    top: 100px;
+    z-index: .12;
+    border-radius: 0px 0px 20px 20px ;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    background-color: rgb(247, 247, 187);
+    color: black;
+    animation: slideInAnimation .6s ease-out;
+
+}
+
+@keyframes slideInAnimation {
+    0% {
+        transform: translateX(50px);
+        animation-timing-function: ease-out;
+    }
+    100% {
+        transform: translateY(0px);
+        animation-timing-function: ease-in;
+    }
+}

@@ -21,6 +21,8 @@ export const Seats = () => {
   const price = new URLSearchParams(search).get('price');
   const from = new URLSearchParams(search).get('from');
   const to = new URLSearchParams(search).get('destination');
+  const date = new URLSearchParams(search).get('date');
+  const time = new URLSearchParams(search).get('time');
 
   useEffect(() => {
     getOneCar(carId, dispatch);
@@ -50,13 +52,16 @@ export const Seats = () => {
   const stateVariable = {
     price: totalAmount,
     seats: seatsArray,
+    date: date,
+    time: time,
+    carId: carId,
+    
+    
   };
 
   const handleSelect = (event) => {
     const checked = event.target.checked;
     const value = event.target.value;
-
-    /* note that it is always advisable that we dispatch an object to the store , that object will be called the payload. that is action.payload.data.seatNo will give us the seat ID */
 
     if (checked) {
       dispatch(addedSeat({ data: { seatNo: value } }));
