@@ -15,6 +15,7 @@ import {
 
 import { MyProfile } from '../UserProfile/MyProfile';
 import './styles.css'
+import { toast } from 'react-hot-toast';
 
 
 
@@ -24,6 +25,11 @@ const Leftbar = () => {
   const [open, setOpen] = useState(false);
 
   const handleClick = () => {
+    const user = JSON.parse(localStorage.getItem('profile'));
+    if (!user) {
+      toast.error("No User Is Logged In Yet , PLease Sign In Or Register to view your Profile!");
+      return;
+    }
     setOpen((prevIsOpen) => !prevIsOpen);
   }
   return (

@@ -55,11 +55,7 @@ export const Account = () => {
       </Typography>
 
       <form onSubmit={handleSubmit}>
-        {/* confirmPassword: ""
-email: "kkirwa230@gmail.com"
-firstName: "kirwa"
-lastName: "kelvin"
-password: "123" */}
+        
 
         <Grid container spacing={2}>
           <>

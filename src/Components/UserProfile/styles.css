@@ -15,7 +15,39 @@
     margin: 10px;
 
 }
+.modal{
+    animation: fadeIn 1s, slideIn .6s ease-out;
+}
+.h3Button{
+    color: goldenrod;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* @keyframes define the code for animation , that is , how animation should happen !!in the  case  below , % stands for the time of animation ,  ease-out start with a low speed initially , then increase at the end , translateY() moves an elemnt in the y direction ..*/
 
 
-/*  background-color:rgb(241, 241, 177);
- */
+@keyframes slideIn {
+    0% {
+        transform: translateY(-50px);/* initially that element is palaced 50 px grom its position.transform is like now pulling it to the position  the compiller will have placed it . */
+        animation-timing-function: ease-out;
+    }
+
+    60% {
+        transform: translateY(1px);
+        animation-timing-function: ease-in;
+    }
+
+    100% {
+        transform: translateY(0px);
+        animation-timing-function: ease-in;
+    }
+}

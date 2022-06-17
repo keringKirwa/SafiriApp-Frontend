@@ -14,7 +14,7 @@ const style = {
   left: '17%',
  width: 350,
   height:'200px',
-    p: 4,
+    p: 2,
   borderRadius:3,
 };
 
@@ -37,6 +37,7 @@ const handleClose = () => setOpen(false);
         
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
+        className='modal'
       >
         <Box sx={style} className='box'>
           <Typography  variant="h6" component="h1" className='profile'>
@@ -51,7 +52,7 @@ const handleClose = () => setOpen(false);
             <h2>Email:</h2>
              {email}
           </Typography>
-                  <Button color='primary' variant='contained' component={Link} to="/home/settings">Update Profile Details</Button>
+                  <Button color='primary' variant='contained' component={Link} to="/home/settings"><div className="h3Button">Update Profile Details</div></Button>
         </Box>
       </Modal>
     </div>

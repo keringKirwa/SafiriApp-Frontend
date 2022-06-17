@@ -4,6 +4,7 @@ import { Avatar, Typography, Grid, Button } from '@mui/material';
 import LockIcon from '@mui/icons-material/Lock';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+/* {"email":"sam@gmail.com","name":"MaripetSam Sammy","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhbUBnbWFpbC5jb20iLCJpZCI6IjYyYWMzNDcyMmIwNzQ5MjYzNGEzNWE0NSIsImlhdCI6MTY1NTQ1Mjc4NywiZXhwIjoxNjU1NDU2Mzg3fQ.rKNqnkdrTR5f5y5qbJ43M3XEZnywb54wl7njlSJiagQ"} */
 
 import './styles.css';
 import { signIn} from '../../ActionCreators/authActionCreator';
