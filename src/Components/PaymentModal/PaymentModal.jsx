@@ -12,6 +12,7 @@ export const PaymentModal = ({ stateVariable } = this.props.first) => {
     time: stateVariable.time,
     seatsSelected:stateVariable.seats,
     phoneNumber: '',
+    carId:stateVariable.carId,
   });
 
   const handleChange = (e) =>

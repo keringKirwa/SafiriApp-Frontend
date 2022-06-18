@@ -97,7 +97,7 @@ export const Seats = () => {
           </h1>
 
           <div className="middle">
-            <div className="empty"></div>
+          
 
             {carSeats.map((seatObject) => (
               <div className="seatBox">

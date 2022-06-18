@@ -32,7 +32,7 @@ export const MyDp = ({open , setOpen}) => {
             <h2>Email:</h2>
              {email}
           </Typography>
-          <Button color='primary' variant='contained' component={Link} to="/home/settings" onClick={handleClick}><div className="h3Button">Update Profile Details</div></Button>
+          <Button color='success' variant='outlined' component={Link} to="/home/settings" onClick={handleClick}><div className="h3Button">Update Profile Details</div></Button>
 
     </div>
   )

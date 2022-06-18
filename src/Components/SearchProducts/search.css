@@ -1,0 +1,37 @@
+#searchDivMainContainer {
+position: fixed;
+padding: 1rem;
+top: 100px;
+border-left: 1px solid violet;
+height: 700px;
+margin-left: 20px;
+}
+
+.GridContainer{
+     display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        right: 30px;
+        height: 400px;
+        width: 350px;
+        border-radius: 20px;
+        gap: 10px;
+}
+
+#searchh2 {
+    font-family: 'Uchen', serif;
+    font-weight: 60px;
+}
+#search{
+    margin-top: 15px;
+    height: 40px;
+}
+
+
+@media screen and (max-width: 650px) {
+    #searchDivMainContainer{
+        display: flex;
+        flex-direction: column;
+    }
+}

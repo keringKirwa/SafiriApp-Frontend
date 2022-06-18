@@ -82,7 +82,7 @@
 }
 
 .middle {
-    background-color:rgba(211, 211, 211, 0.938);
+    background-color:rgba(211, 211, 211, 0.979);
     width: 530px;
     display: flex;
     flex-direction: row;
