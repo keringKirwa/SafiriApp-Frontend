@@ -18,6 +18,67 @@
     gap: 10px;
 
 }
+#orderSummaryText {
+    font-size:40px;
+    font-family: 'Cormorant', serif;
+    margin: 0px auto;
+    text-align: center;
+
+}
+.actualTicket {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    color: black;
+    padding-left: 30px;
+
+}
+#route {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: -3px;
+}
+#margin {
+    margin-left: 40px;
+}
+#almost{
+    font-family: 'Cormorant', serif;
+    text-align: center;
+    color: dodgerblue;
+
+}
+#seatsMapped {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 3px;
+    padding: 3px;
+}
+#h3price {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3px;
+    margin: 3px;
+
+}
+
+.button {
+    position: relative;
+    right: -30px;
+    height: 40px;
+    border-radius: 10px;
+    top: 5px;
+}
+
+.h3color {
+    color: goldenrod;
+    font-weight: 1000px;
+}
 #proceedText{
     text-align: center;
     font-family: 'Uchen', serif;
@@ -27,48 +88,12 @@
 
 }
 
-.actualTicket{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    color: black;
-    padding-left: 30px;
 
-}
 
-.button{
-    position: relative;
-    right: -30px;
-    height: 40px;
-    border-radius: 10px;
-    top: 5px;
-}
 
-.h3color{
-    color: goldenrod;
-    font-weight: 1000px;
-}
-#almost{
-    font-family: 'Uchen', serif;
-    font-weight: 60px;
-    font-size: 20px;
-    text-align: center;
-}
 
-#h3price{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-    margin: 6px 10px;
-
-}
 .margin{
     margin-left: 20px;
-}
-#margin{
-    margin-left: 40px;
 }
 
 
@@ -116,24 +141,11 @@ input.checkBox{
     left: 95px;
 
 }
-.seatsMapped{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-}
+
 .leftBarContainer{
     width: 215px;
     height: 600px;
     position: fixed;
     border-right: 1px solid violet;
-    
-}
 
-.route{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: -3px;
 }

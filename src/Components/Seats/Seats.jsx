@@ -132,21 +132,17 @@ export const Seats = () => {
       </Grid>
 
       <Grid item xs={3} sm={3}>
-        {/* NOTE that the data in the paper below are all from the store and not the database, that is , we dont initially keep the ticket data in the datbase , until when the user makes a payment.*/}
 
         <Paper id="cart" elevation={6}>
-          <h2>Order Summary</h2>
-          <h3 id="proceedText">
-            Almost to the end ! Proceed to checkOut and Receive a ticket.
-          </h3>
+          <h2 id='orderSummaryText'>Order Summary</h2>
           <div className="actualTicket">
-            <h4 className="route">
+            <h4 id="route">
               From : <h3 className="margin">{from}</h3>{' '}
             </h4>
-            <h4 className="route">
+            <h4 id="route">
               To : <h3 className="margin">{to}</h3>{' '}
             </h4>
-            <h3 className="seatsMapped">
+            <h3 id="seatsMapped">
               selected Seats : {'  '}
               {seatsArray.map((seat) => (
                 <h2>{seat},</h2>
@@ -165,7 +161,7 @@ export const Seats = () => {
             onClick={handleClick}
           >
             {' '}
-            <div className="h3color">Proceed to checkOut</div>
+            <div className="h3color">Proceed to checkOut ➡️</div>
           </Button>
         </Paper>
       </Grid>
