@@ -19,7 +19,7 @@
     padding-top: 10px;
     margin-top: 10px;
     top: 0;
-    
+
 }
 
 
@@ -51,6 +51,10 @@
     text-align: center;
     color: rgb(0, 37, 139);
     text-transform: capitalize;
-    font-weight: 10px;
-    font-size: 20px;
+    font-family: 'Cormorant', serif;
+    font-size: 30px;
+}
+#butttonComponent{
+    color: goldenrod;
+    border-color: rgb(166, 163, 163);
 }

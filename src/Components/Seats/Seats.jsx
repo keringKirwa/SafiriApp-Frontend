@@ -55,8 +55,8 @@ export const Seats = () => {
     date: date,
     time: time,
     carId: carId,
-    
-    
+
+
   };
 
   const handleSelect = (event) => {
@@ -71,6 +71,9 @@ export const Seats = () => {
   };
 
   const handleClick = () => {
+
+    /* TODO: call the Joi.validate() methid to validate the user inputs here.if there is an error , toast that error . */
+
     if (totalAmount !== 0) {
       setOpen((prevIsOpen) => !prevIsOpen);
     } else {
@@ -97,7 +100,7 @@ export const Seats = () => {
           </h1>
 
           <div className="middle">
-          
+
 
             {carSeats.map((seatObject) => (
               <div className="seatBox">

@@ -1,0 +1,105 @@
+.mainPaper {
+    font-family: 'Tangerine', cursive;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: '100%';
+    margin: 10px;
+    height: 200px;
+    padding: 10px;
+
+}
+
+.mainPaper:hover {
+    transform: scale3d(1.0006);
+    transition: transform 500ms;
+    margin: 10px;
+    background-color: beige;
+
+
+}
+
+.sub {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 10px;
+
+}
+
+span {
+    color: goldenrod;
+}
+
+#strong {
+    font-size: 40px;
+}
+
+.intro {
+    width: 300px;
+}
+
+h4 {
+    text-align: center;
+}
+
+#copyright {
+
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.h3Color {
+    color: goldenrod;
+}
+
+#button1 {
+    color: goldenrod;
+    border-color: darkblue;
+    font-size: large;
+    max-width: 100%;
+    height: 40px;
+}
+
+.h2Container {
+    font-family: 'Cormorant', serif;
+    font-size: 35px;
+    text-align: center;
+}
+
+#linkedinIcon{
+color: red;
+font-size: 70px;
+}
+#facebookIcon {
+    color:blue;
+    font-size: 70px;
+}
+#twitterIcon {
+    color:blue;
+    font-size: 70px;
+}
+#divIcon h2{
+    font-size: 40px;
+}
+#divIcon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+#divIcon:hover{
+    border: 1px solid grey;
+    border-radius: 10px;
+    transform: scale(1.1);
+    transition: .3s;
+    height: 100%;
+    background-color:rgb(240, 240, 236);
+
+
+}

@@ -10,16 +10,17 @@ import { PaymentModal } from "./Components/PaymentModal/PaymentModal";
 import { Login } from './Components/Login/Login';
 import { Toaster } from 'react-hot-toast';
 import { Account } from './Components/AccountSettings/Account';
+import Tickets from "./Components/Tickets/Tickets";
 
 const App = () => {
   const user = JSON.parse(localStorage.getItem('profile'));
   return (
     <>
-    
+
 
       <BrowserRouter>
         <Toaster />
-        
+
         <Navbar></Navbar>
 
         <Routes>
@@ -27,17 +28,18 @@ const App = () => {
           <Route path="/" exact element={<Navigate to='/home' />} />
           <Route path="/home" exact element={<Home />} />
 
-          <Route path="/home/register" exact element={ !user ? <SignUp /> : <Navigate to="/home" /> } />          
+          <Route path="/home/register" exact element={ !user ? <SignUp /> : <Navigate to="/home" /> } />
           <Route path="/home/login" exact element={<Login />} />
           <Route path="/home/products" exact element={<Products />} />
           <Route path="home/products/:id" exact element={<Seats />} />
           <Route path="home/payment" exact element={<PaymentModal />} />
+          <Route path="home/tickets" exact element={<Tickets />} />
 
-          <Route path="/home/settings" exact element={ user ? <Account/> : <Navigate to="/home" /> } /> 
+          <Route path="/home/settings" exact element={ user ? <Account/> : <Navigate to="/home" /> } />
 
 
         </Routes>
-        
+
       </BrowserRouter>
       </>)
 };

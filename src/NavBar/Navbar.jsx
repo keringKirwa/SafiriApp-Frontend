@@ -40,7 +40,7 @@ export const Navbar = () => {
   return (
 
     <AppBar style={{ marginBottom: '10px' }} className="appBar">
-    
+
       {open && <MyDp open={open} setOPen={setOpen} /> }
 
       <Toolbar className="toolbarMain">
@@ -57,7 +57,7 @@ export const Navbar = () => {
         </Typography>
 
         <Typography id="emailTypo" variant="h5">
-          📧 : safiri@gmail.com
+          📧 : SafiriKenya@gmail.com
         </Typography>
 
         <div>
@@ -66,7 +66,7 @@ export const Navbar = () => {
               <Typography variant="h5" id="user">
                 {user.split(' ')[0]}
               </Typography>
-              
+
                <IconButton onClick={handleOpen}><ArrowDropDownIcon size='large'></ArrowDropDownIcon>Profile</IconButton>
 
               <Button
@@ -77,7 +77,7 @@ export const Navbar = () => {
               >
                 Logout
               </Button>
-             
+
             </div>
           ) : (
             <Button
@@ -91,7 +91,7 @@ export const Navbar = () => {
               {' '}
               <div className="h3Div">Sign In </div>
               </Button>
-             
+
           )}
         </div>
       </Toolbar>
