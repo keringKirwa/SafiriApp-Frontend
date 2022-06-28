@@ -3,15 +3,7 @@ import image from '../../../src/images/carLogo.jpg'
 import { Link} from 'react-router-dom';
 
 export const Product = ({ car }) => {
-  /* {
-      from: 'KItale',
-      to: 'Kisumu',
-      date: '10-6-2022',
-      time: '9:00 AM',
-      price: '1350',
-      availableSeats:1,
-    } */
-  
+  /* {id: 2, start_point: 'NRB', end_point: 'NYH', departure_time: '09:25:04', price: 456} */
   return (
     <div className="searchItem">
       <img
@@ -22,16 +14,14 @@ export const Product = ({ car }) => {
 
       {/* ---------------------------------------------------------------- */}
       <div className="siDesc">
-        <h1 className="siTitle">{car.from}➡️ {car.to}</h1>
+        <h1 className="siTitle">{car.start_point}➡️ {car.end_point}</h1>
 
         <span className="siTaxiOp">{car.availableSeats} seats available</span>
-			  <span className="siSubtitle">
-         with  Music system and Free WIFI
-        </span>
-      
-        <span className="siCancelOp">Free cancellation, for Less than 24 hours towards depature time.</span>
-        
-        <span id="depature">Depature Time: {car.time}</span>
+
+
+        <span id="siCancelOp">Free cancellation, for Less than 24 hours towards depature time.</span>
+
+        <span id="depature">Depature Time: {car.departure_time}</span>
       </div>
 
       {/* --------------------------------------------------- */}
@@ -46,8 +36,8 @@ export const Product = ({ car }) => {
         <div className="siDetailTexts">
           <span className="siPrice">Ksh. { car.price}</span>
 
-          <Link to={`/home/products/${car.carId}?carId=${car.carId}&price=${car.price}&from=${car.from}&destination=${car.to}&date=${car.date}&time=${car.time}`} ><button className="siCheckButton" >See availability</button></Link>
-          
+          <Link to={`/home/products/${car.id}?carId=${car.id}&price=${car.price}&from=${car.from}&destination=${car.to}&date=${car.date}&time=${car.departure_time}`} ><button className="siCheckButton" >See availability</button></Link>
+
         </div>
       </div>
     </div>

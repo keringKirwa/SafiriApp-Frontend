@@ -1,65 +1,60 @@
 import axios from 'axios';
-import { login, signup } from '../reducers/authSlice';
 import { userDetailsFetched } from '../reducers/settingsSlice';
 import { toast } from 'react-hot-toast';
 
-const axiosInstance = axios.create({ baseURL: 'http://localhost:5000' });
+const axiosInstance = axios.create({ baseURL: 'http://127.0.0.1:8000' });
 
-axiosInstance.interceptors.request.use((req) => {
-  if (localStorage.getItem('kirwa')) {
-    req.headers.Authorization = `Bearer ${
-      JSON.parse(localStorage.getItem('profile'))?.token
-    }`;
-  }
-
-  return req;
-});
 
 export const signIn = async (formData, navigate, dispatch) => {
+  console.log(formData);
   try {
     const { email, password } = formData;
+    const userName='ArapKering'
 
-    /* this is where we will send an axios request to the backend of the application .we will receive a JSON object with the following properties : 
-
-    data = { result:{userId:'1234', email:'kkirwa230@gmail.com'} , token:'tefdgye6535367474gdsbhdhhgdg' }
-
-     */
-
-    const { data } = await axiosInstance.post('/user/signin', {
-      email,
-      password,
+    const { data } = await axiosInstance.post('/api/v1/user/profile/login/', {
+      email:email,
+      password: password,
+      username:userName
     });
+    if (data.key) {
+      localStorage.setItem('token', data.key);
+      localStorage.setItem('user', userName);
+      toast.success("Successfully Logged In.")
+    }
 
-    const { userEmail, userName } = data.result;
-    const token = data.token;
-
-    dispatch(
-      login({ data: { email: userEmail, name: userName, token: token } })
-    );
 
     navigate('/home');
   } catch (error) {
+    toast.error(`ERROR !! ${error.response.data.detail} , ${error.message}` );
     console.log(error);
   }
 };
 
 export const signUp = async (formData, navigate, dispatch) => {
-  try {
-    const { data } = await axiosInstance.post('/user/signup', formData);
+  const { firstName, email, password, confirmPassword } = formData;
 
+  const userDetails = {
+    email: email,
+    username: firstName,
+    password1: password,
+    password2:confirmPassword
+  }
+  try {
+    console.log(userDetails);
+    const response = await axiosInstance.post('/api/v1/user/registration/', userDetails);
+    console.log(response);
     toast.success('Your Account Has been creted successfully !!');
 
-    const { email, name } = data.result;
+    /* const { email, name } = data.result;
     const token = data.token;
-    dispatch(signup({ data: { email: email, name: name, token: token } }));
+    dispatch(signup({ data: { email: email, name: name, token: token } })); */
 
     navigate('/home/login');
   } catch (error) {
-    /* note that it is  always/AMUST advisable that we log the error and not the message for the reasons of debugging . */
 
     console.log(error);
 
-    toast.error(error.response.data.message || error.message);
+    toast.error("there was an error in registration");
 
     console.log(typeof error);
   }
@@ -73,9 +68,8 @@ export const updateAccountDetails = async (
   setUserDetails
 ) => {
   try {
-    /* note that data refers to the object inside the res.status().json() method . */
 
-    const { data } = await axiosInstance.post('/user/settings', formData);
+    const { data } = await axiosInstance.post('/api/v1/user/registration/', formData);
     setUserDetails(data.userDetails);
 
     dispatch(userDetailsFetched({ data: data.userDetails }));

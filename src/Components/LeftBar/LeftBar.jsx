@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import { Typography } from '@mui/material';
 import Container from '@mui/material/Container';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { IconButton } from '@mui/material';
 import {
   Bookmark,
@@ -13,7 +13,6 @@ import {
   TabletMac,
 } from '@mui/icons-material';
 
-import { MyProfile } from '../UserProfile/MyProfile';
 import './styles.css'
 import { toast } from 'react-hot-toast';
 
@@ -23,20 +22,39 @@ import { toast } from 'react-hot-toast';
 const Leftbar = () => {
 
   const [open, setOpen] = useState(false);
-
+  const user = localStorage.getItem('user');
+  const navigate = useNavigate();
   const handleClick = () => {
-    const user = JSON.parse(localStorage.getItem('profile'));
+
     if (!user) {
       toast.error("No User Is Logged In Yet , PLease Sign In Or Register to view your Profile!");
+      console.log(open);
       return;
     }
     setOpen((prevIsOpen) => !prevIsOpen);
   }
+
+  const handeTicketPageRequest = () => {
+
+    if (!user) {
+      toast.error("No User Is Logged In Yet , PLease Sign In Or Register To See Your Tickets !!!");
+      return;
+    }
+    navigate('/home/tickets');
+
+  }
+   const handeAccountPageRequest = () => {
+
+    if (!user) {
+      toast.error("PLease Sign In To Update Your Account Details !!!");
+      return;
+    }
+    navigate('/home/settings');
+
+  }
   return (
     <Container className="mainContainer">
 
-      {open && <MyProfile open={open} setOpen={ setOpen}/>}
-      
 
       {/* FIXME: add the MyProfile component here  */}
 
@@ -50,12 +68,11 @@ const Leftbar = () => {
       <div className="mainDivItem">
         <IconButton onClick={handleClick}> <Person className="icon profile" /><Typography className="text profile">My Profile</Typography>
         </IconButton>
-        
-      </div>
 
-      <div className="mainDivItem">
-        <Bookmark className="icon" />
-        <Typography className="text">My Tickets</Typography>
+      </div>
+        <div className="mainDivItem">
+        <IconButton onClick={handeTicketPageRequest }> <Bookmark  className="icon " /><Typography className="text profile">My Tickets</Typography>
+        </IconButton>
       </div>
 
       <div className="mainDivItem">
@@ -72,12 +89,10 @@ const Leftbar = () => {
         <Typography className="text">Market Place</Typography>
       </div>
 
-       <Link to="/home/settings" style={{ textDecoration: 'none' }}>
         <div className="mainDivItem">
-          <Settings className="icon" />
-          <Typography className="text">Acc.Settings</Typography>
-        </div>
-      </Link>
+        <IconButton onClick={handeAccountPageRequest }> <Settings  className="icon " /><Typography className="text profile">Acc. Settings</Typography>
+        </IconButton>
+      </div>
     </Container>
   );
 };

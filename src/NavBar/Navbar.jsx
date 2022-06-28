@@ -1,33 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { AppBar, Typography, Toolbar, Button } from '@mui/material';
-import { IconButton } from '@mui/material';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { logout } from '../reducers/authSlice';
 
 import { useDispatch } from 'react-redux';
 
 import './NavBar.css';
-import { MyDp } from '../Components/UserProfile/MyDp';
 
 export const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
-
-  const [open, setOpen] = useState(false);
-
-  const handleOpen = () => {
-    setOpen((prevIsOpen)=>!prevIsOpen);
-  }
-
-  const [user, setUser] = useState(
-    JSON.parse(localStorage.getItem('profile'))?.name
-  );
+  const [user, setUser] = useState(localStorage.getItem('user'));
 
   useEffect(() => {
-    setUser(JSON.parse(localStorage.getItem('profile'))?.name);
+    setUser(localStorage.getItem('user'));
   }, [location]);
 
   const handleLogout = async () => {
@@ -41,7 +28,6 @@ export const Navbar = () => {
 
     <AppBar style={{ marginBottom: '10px' }} className="appBar">
 
-      {open && <MyDp open={open} setOPen={setOpen} /> }
 
       <Toolbar className="toolbarMain">
         <h2 className="fontFamily" id="header1">
@@ -52,22 +38,13 @@ export const Navbar = () => {
 
           <span id="introducing">Introducing the Difference....</span>
         </h2>
-        <Typography id="phoneTypo" variant="h5">
-          📞0734536464
-        </Typography>
-
-        <Typography id="emailTypo" variant="h5">
-          📧 : SafiriKenya@gmail.com
-        </Typography>
-
-        <div>
+        <div id='userDetails'>
           {user ? (
-            <div className="logoutDiv">
+            <>
               <Typography variant="h5" id="user">
                 {user.split(' ')[0]}
               </Typography>
 
-               <IconButton onClick={handleOpen}><ArrowDropDownIcon size='large'></ArrowDropDownIcon>Profile</IconButton>
 
               <Button
                 variant="contained"
@@ -77,9 +54,9 @@ export const Navbar = () => {
               >
                 Logout
               </Button>
-
-            </div>
-          ) : (
+              </>
+          )
+           : (
             <Button
               id="loginButton"
               variant="contained"

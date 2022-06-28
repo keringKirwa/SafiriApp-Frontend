@@ -33,8 +33,8 @@
     border-radius: 100px 0px;
     box-shadow: 0px 20px blue;
     position: relative;
-    top: -50px;
-    left: 40px;
+    top: -90px;
+    left: 70px;
     gap: 5px;
 }
 
@@ -57,4 +57,7 @@
 #butttonComponent{
     color: goldenrod;
     border-color: rgb(166, 163, 163);
+    height: 70px;
+    max-width: 300px;
+    margin-left: auto;
 }

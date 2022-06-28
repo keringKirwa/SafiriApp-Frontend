@@ -35,7 +35,7 @@ const App = () => {
           <Route path="home/payment" exact element={<PaymentModal />} />
           <Route path="home/tickets" exact element={<Tickets />} />
 
-          <Route path="/home/settings" exact element={ user ? <Account/> : <Navigate to="/home" /> } />
+          <Route path="/home/settings" exact element={<Account />} />
 
 
         </Routes>

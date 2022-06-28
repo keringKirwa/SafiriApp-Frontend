@@ -21,12 +21,12 @@ const TicketsFooter = () => {
                       <h2>SafiriKenya2022</h2>
                       <FacebookIcon color='primary' id='facebookIcon'></FacebookIcon></div>
                   <div id="divIcon">
-                      <h2>SafiriKenya2022</h2>
+                      <h2>@SafiriKenya2022</h2>
                       <LinkedInIcon id='linkedinIcon' />
                   </div>
 
                    <div id="divIcon">
-                      <h2>SafiriKenya2022</h2>
+                      <h2>@SafiriKenya2022</h2>
                        < TwitterIcon id='twitterIcon' />
 
                   </div>

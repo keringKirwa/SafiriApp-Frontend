@@ -33,7 +33,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
         { phone: "076364544546", from: "Kitale", to: "Nakuru", date: "18/6/2020", ticketId: '34526',dayBooked:"22/2/2020" }
     ]
 
-export const TableComponent =()=> {
+export const TableComponent =({ticketsArray})=> {
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
