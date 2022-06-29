@@ -18,7 +18,7 @@ export const Products = () => {
   useEffect(() => {
     getAllCars(dispatch);
 
-  }, []);
+  }, [dispatch]);
 
   const { isLoading, posts } = useSelector((state) => state.cars);
   console.log(posts);
