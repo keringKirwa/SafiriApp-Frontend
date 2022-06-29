@@ -2,7 +2,7 @@ import axios from 'axios';
 import { allCarsFetched, carsFetchedBySearch, endLoading, oneCarFetched, startLoading } from '../reducers/carSlice';
 
 
-const AxiosInstance = axios.create({ baseURL: 'safiri-backend.herokuapp.com' });
+const AxiosInstance = axios.create({ baseURL: 'http://localhost:8000' });
 
 
 

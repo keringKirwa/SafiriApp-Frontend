@@ -75,7 +75,7 @@ const Leftbar = () => {
         </IconButton>
       </div>
 
-      <div className="mainDivItem">
+{/*       <div className="mainDivItem">
         <List className="icon" />
         <Typography className="text">Categories</Typography>
       </div>
@@ -87,7 +87,7 @@ const Leftbar = () => {
       <div className="mainDivItem">
         <Storefront className="icon" />
         <Typography className="text">Market Place</Typography>
-      </div>
+      </div> */}
 
         <div className="mainDivItem">
         <IconButton onClick={handeAccountPageRequest }> <Settings  className="icon " /><Typography className="text profile">Acc. Settings</Typography>

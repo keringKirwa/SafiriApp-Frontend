@@ -31,6 +31,7 @@ const SignUp = () => {
     setUserDetails(initialState);
     setWantsToSignup((prevIsSignup) => !prevIsSignup);
     setShowPassword(false);
+    navigate('/home/login')
   };
 
   const handleShowPassword = () => setShowPassword(!showPassword);

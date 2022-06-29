@@ -4,13 +4,15 @@ import { Button, Grid } from '@mui/material';
 import safiriImage from '../../../src/images/safaricom.png';
 import Input from './Input';
 import './styles.css';
+import { useNavigate } from 'react-router-dom';
 
 export const PaymentModal = ({ stateVariable } = this.props.first) => {
+  const navigate = useNavigate();
   const [userDetails, setUserDetails] = useState({
     amount: stateVariable.price,
     date: stateVariable.date,
     time: stateVariable.time,
-    seatsSelected:stateVariable.seats,
+    seatsSelected: stateVariable.seats[0],
     phoneNumber: '',
     carId:stateVariable.carId,
   });
@@ -20,11 +22,10 @@ export const PaymentModal = ({ stateVariable } = this.props.first) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    navigate('/home/tickets');
 
     console.log(userDetails);
-    return;
 
-    /* TODO: call an action creator from heren to communicate with the database and send the payment details in an object*/
   };
 
   return (

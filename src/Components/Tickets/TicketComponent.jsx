@@ -27,10 +27,17 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
     border: 0,
   },
 }));
+  var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+
+    const datePaid = mm + '-' + dd + '-' + yyyy;
+
 
  const tableData = [
-        { phone: "07636454646", from: "nairobi", to: "kitale", date: "10/2/2020", ticketId: '0001', dayBooked:"22/2/2020"},
-        { phone: "076364544546", from: "Kitale", to: "Nakuru", date: "18/6/2020", ticketId: '34526',dayBooked:"22/2/2020" }
+        { phone: "0793003495", from: "Nairobi", to: "Nyahururu",date:'18/6/2020' , ticketId: '0001', dayBooked:datePaid},
+        { phone: "076364544546", from: "Kitale", to: "Nakuru", date: "18/6/2020", ticketId: '0001',dayBooked:"22/2/2020" }
     ]
 
 export const TableComponent =({ticketsArray})=> {

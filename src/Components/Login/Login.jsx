@@ -10,7 +10,7 @@ import './styles.css';
 import { signIn} from '../../ActionCreators/authActionCreator';
 
 const initialState = {
-    email: '',
+    username: '',
     password: '',
 };
 
@@ -28,7 +28,7 @@ export const Login = () => {
     setUserDetails({ ...userDetails, [e.target.name]: e.target.value });
 
   const handleSubmit = async (e) => {
-      e.preventDefault(); 
+      e.preventDefault();
       console.log(userDetails);
       dispatch(signIn(userDetails, navigate,dispatch));
     }
@@ -36,7 +36,7 @@ export const Login = () => {
     /* TODO :Redirect a user from here to the home page . */
 
     return (
-      
+
         <div className="paper" id="paper">
 
             <Avatar id="avatar">
@@ -50,12 +50,12 @@ export const Login = () => {
             <form onSubmit={handleSubmit}>
 
                 <Grid container spacing={2}>
-                    <Input name="email"
-                        label="Email Address"
+                    <Input name="username"
+                        label="Username"
                         handleChange={handleChange}
-                        type="email"
+                        type="text"
                     />
-            
+
 
                     <Input
                         name="password"
